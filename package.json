@@ -1,7 +1,25 @@
 {
   "name": "ireporter234",
   "version": "0.1.0",
-  "private": true,
+  "description": "Introduction iReporter seeks to provide a platform that allows users report corruption cases and interventions to designated authorities.",
+  "scripts": {
+    "start": "node scripts/start.js",
+    "build": "node scripts/build.js",
+    "test": "node scripts/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blackdevelopa/ireporter234.git"
+  },
+  "keywords": [
+    "ireporter234"
+  ],
+  "author": "blackdevelopa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/blackdevelopa/ireporter234/issues"
+  },
+  "homepage": "https://github.com/blackdevelopa/ireporter234#readme",
   "dependencies": {
     "@babel/core": "7.2.2",
     "@svgr/webpack": "4.1.0",
@@ -51,11 +69,6 @@
     "webpack-dev-server": "3.1.14",
     "webpack-manifest-plugin": "2.0.4",
     "workbox-webpack-plugin": "3.6.3"
-  },
-  "scripts": {
-    "start": "node scripts/start.js",
-    "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
   },
   "eslintConfig": {
     "extends": "react-app"
