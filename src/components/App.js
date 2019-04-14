@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter,  Route, Switch } from 'react-router-dom';
+import LandingPage from './pages/Landing/landingPage';
+import './style/index.css';
 
 class App extends Component {
   render() {
     return (
-      <BrowserRouter >
-        <div>
-          <h1>This is iReporter homepage</h1>
-        </div>
+      <BrowserRouter>
+        <Switch>
+          <LandingPage />
+        </Switch>
       </BrowserRouter>
     )
   }
 }
 export default App;
-
-
