@@ -1,27 +1,26 @@
-import * as actionTypes from '../../actions/action-types';
+import {LOGIN_USER_START, LOGIN_USER_SUCCESS} from '../../actions/action-types';
 
-/**
- * @description - login user
- * @param {*} state -
- * @returns {object} -
- */
-const loginSuccess = ({ state, action }) => ({
-  ...state,
-  isLoading: true,
-  success: true,
-  response: action.payload,
-});
+const initialState = {
+  isLoading: false,
+  success: false,
+  user: ""
+};
 
-/**
- * @description -
- * @param {*} state
- * @param {*} action
- * @returns {fn} -
- */
-const reducer = (state, action) => {
+
+const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case actionTypes.LOGIN_USER_SUCCESS:
-      return loginSuccess(state);
+    case LOGIN_USER_START:
+      return {
+        ...state,
+        isLoading:true
+      }
+    case LOGIN_USER_SUCCESS:
+      return  {
+        ...state,
+        isLoading: false,
+        success: true,
+        user: action.payload
+      }
     default:
       return state;
   }

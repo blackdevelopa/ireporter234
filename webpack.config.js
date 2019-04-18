@@ -32,7 +32,7 @@ module.exports = {
         }],
       },
       {
-        test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
+        test: [/\.jpe?g$|\.ico$|\.gif$|\.png$|\.svg$|\.woff$|\.ttf$|\.wav$|\.mp3$/],
         loader: require.resolve('url-loader'),
         options: {
           limit: 432914,
