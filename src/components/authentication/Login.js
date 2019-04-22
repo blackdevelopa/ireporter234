@@ -1,13 +1,13 @@
 import React from 'react';
-import ModalExampleDimmer from '../modal/Modal';
+import AuthModal from '../modal/Modal';
 import LoginForm from '../form/LoginForm';
 
 const Login = (modalState) => {
   return (
     <div>
-      <ModalExampleDimmer modalState={modalState} >
+      <AuthModal modalState={modalState} >
         <LoginForm />
-      </ModalExampleDimmer>
+      </AuthModal>
     </div>
   )
 }

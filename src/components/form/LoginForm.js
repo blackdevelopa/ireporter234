@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { Button, Form } from 'semantic-ui-react';
 import { connect }  from "react-redux"
-import {loginUser} from '../../actions/auth/login';
-
+import {loginUser} from '../../store/actions/auth/login';
+import { withRouter } from 'react-router-dom';
 
 class LoginForm extends Component {
   state = {
     email: "",
-    password: ""
+    password: "",
   }
 
   onChange = e => {
@@ -20,7 +20,13 @@ class LoginForm extends Component {
       password:  this.state.password
     }
 
-    this.props.loginUser(userData)
+    this.props.loginUser(userData);
+  }
+
+  componentDidUpdate() {
+    if(this.props.isAuthenticated){
+      this.props.history.push('/profile');
+    }
   }
 
   render() {
@@ -34,10 +40,14 @@ class LoginForm extends Component {
           <label>Password</label>
           <input placeholder='secret' onChange={this.onChange} name="password" value={this.state.password}/>
         </Form.Field>
-        <Button type='submit'>Login</Button>
+        <Button type='submit'style={{background: 'grey', color: 'white'}}>Login</Button>
       </Form>
     )
   }
 }
 
-export default connect(null, {loginUser})(LoginForm)
+const mapStateToProps = (state) => ({
+  isAuthenticated: state.login.isAuthenticated
+})
+
+export default connect(mapStateToProps, {loginUser})(withRouter(LoginForm))
