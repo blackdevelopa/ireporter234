@@ -1,17 +1,20 @@
-import React, { Component } from 'react';
-import { BrowserRouter,  Route, Switch } from 'react-router-dom';
-import LandingPage from './pages/Landing/landingPage';
+import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import Routes from '../routes/Routes'
 import './style/index.css';
+import { Provider }  from "react-redux";
+import { ToastContainer} from 'react-toastify';
+import store from '../store/store';
 
-class App extends Component {
-  render() {
-    return (
-      <BrowserRouter>
-        <Switch>
-          <LandingPage />
-        </Switch>
-      </BrowserRouter>
-    )
-  }
-}
+
+
+const App = () => (
+  <Provider store={store}> 
+    <Router>
+      <Routes />
+    </Router>
+    <ToastContainer autoClose={1000} />
+  </Provider>
+)
+
 export default App;

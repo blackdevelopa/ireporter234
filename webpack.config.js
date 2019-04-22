@@ -32,7 +32,7 @@ module.exports = {
         }],
       },
       {
-        test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
+        test: [/\.jpe?g$|\.ico$|\.gif$|\.png$|\.svg$|\.woff$|\.ttf$|\.wav$|\.mp3$/],
         loader: require.resolve('url-loader'),
         options: {
           limit: 432914,
@@ -41,6 +41,9 @@ module.exports = {
     ],
   },
   mode: 'development',
+  devServer: {
+    historyApiFallback: true,
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: './public/index.html'
