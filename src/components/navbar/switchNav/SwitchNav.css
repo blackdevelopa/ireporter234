@@ -1,0 +1,8 @@
+.switchNav {
+  display: flex;
+  top: 0;
+  padding: 20px 0;
+  width: 100%;
+  background-color: gray;
+}
+

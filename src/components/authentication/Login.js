@@ -1,15 +1,15 @@
 import React from 'react';
 import AuthModal from '../modal/Modal';
-import LoginForm from '../form/LoginForm';
+import Login from '../containers/authentication/Login';
 
-const Login = (modalState) => {
+const LoginModal = (modalState) => {
   return (
     <div>
       <AuthModal modalState={modalState} >
-        <LoginForm />
+        <Login />
       </AuthModal>
     </div>
   )
 }
 
-export default Login;
+export default LoginModal;

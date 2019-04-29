@@ -1,0 +1,143 @@
+body {
+  padding: 0;
+  margin: 0;
+  background: #fff;
+  color: #000;
+  overflow-x: hidden;
+}
+
+.navbar {
+  display: flex;
+  top: 0;
+  padding: 20px 0;
+  width: 100%;
+  background: #ffffff;
+}
+
+.navbar .navbar_text {
+  text-decoration: none;
+  padding: 0 5px;
+  color: #000;
+}
+
+.navbar .navbar_text:hover {
+  color: #f28500;
+}
+
+.navbar .logo {
+  flex: 1;
+  padding-left: 5%;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.navbar .menu {
+  display: flex;
+  flex: 1;
+  flex-direction: row-reverse;
+  padding-right: 5%;
+}
+
+.second_nav {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 25px;
+  background: gray;
+}
+
+.second_nav .second_nav_text {
+  color: #fff;
+  text-align: center;
+}
+
+.all-users {
+  padding: 10px 40px;
+}
+
+table {
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid;
+  text-align: left;
+  padding: 8px;
+}
+
+.all-users button {
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.all-users button:hover {
+  border: 2px solid #f28500;
+}
+
+.footer a:hover {
+  color: #f28500;
+}
+
+.footer-links {
+  display: inline-block;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+}
+
+.footer {
+  bottom: 0;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  background: #000;
+}
+
+@media
+	  only screen 
+    and (max-width: 760px) {
+
+		table, thead, tbody, th, td, tr {
+			display: block;
+		}
+
+		thead tr {
+			position: absolute;
+			top: -9999px;
+			left: -9999px;
+		}
+
+    tr {
+      margin: 0 0 1rem 0;
+    }
+      
+    tr:nth-child(odd) {
+      background: #ccc;
+    }
+    
+		td {
+			border: none;
+			border-bottom: 1px solid #eee;
+			position: relative;
+			padding-left: 50%;
+		}
+
+		td:before {
+			position: absolute;
+			top: 0;
+			left: 6px;
+			width: 45%;
+			padding-right: 10px;
+			white-space: nowrap;
+		}
+
+		td:nth-of-type(1):before { content: "S/N"; }
+    td:nth-of-type(2):before { content: "Name"; }
+    td:nth-of-type(3):before { content: "Profession"; }
+		td:nth-of-type(4):before { content: "eMail"; }
+		td:nth-of-type(5):before { content: "Actions"; }
+  
+    .footer {
+      display: none;
+    }
+  }

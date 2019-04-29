@@ -1,6 +1,5 @@
 import axios from 'axios';
 import * as actionTypes from '../action-types';
-import { toast } from 'react-toastify';
 
 export const loginUserStart = () => ({
   type: actionTypes.LOGIN_USER_START,
@@ -26,10 +25,8 @@ export const loginUser = userData => {
     })
     .catch(errors => {
       if(errors.response.data.status === 400) {
-        dispatch(loginUserFailure('sfds'))
+        dispatch(loginUserFailure())
       }
-    console.log(errors.response.data.status, 'sfw')
-    toast('error')
     dispatch(loginUserFailure(errors));
   })
 }

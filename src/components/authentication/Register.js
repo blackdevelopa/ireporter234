@@ -1,15 +1,15 @@
 import React from 'react';
 import AuthModal from '../modal/Modal';
-import RegisterForm from '../form/RegisterForm';
+import Register from '../containers/authentication/Register';
 
-const Register = (modalState) => {
+const RegisterModal = (modalState) => {
   return (
     <div>
       <AuthModal modalState={modalState} >
-        <RegisterForm />
+        <Register />
       </AuthModal>
     </div>
   )
 }
 
-export default Register;
+export default RegisterModal;

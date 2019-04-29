@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Modal } from 'semantic-ui-react';
-import LoginForm from '../form/LoginForm';
-import RegisterForm from '../form/RegisterForm';
+import Login from '../containers/authentication/Login';
+import Register from '../containers/authentication/Register';
 
 class AuthModal extends Component {
   state = {
@@ -21,7 +21,7 @@ class AuthModal extends Component {
           <Modal.Header>{login ? ['Login with '] : ['Signup with ']}iReporter</Modal.Header>
           <Modal.Content>
             {
-              login === true ? <LoginForm /> : <RegisterForm />
+              login === true ? <Login /> : <Register />
             }
           </Modal.Content>
           <Modal.Actions

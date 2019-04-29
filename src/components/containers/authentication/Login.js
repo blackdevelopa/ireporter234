@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Form } from 'semantic-ui-react';
 import { connect }  from "react-redux"
-import {loginUser} from '../../store/actions/auth/login';
+import {loginUser} from '../../../store/actions/auth/login';
 import { withRouter } from 'react-router-dom';
 
 class LoginForm extends Component {
@@ -25,7 +25,7 @@ class LoginForm extends Component {
 
   componentDidUpdate() {
     if(this.props.isAuthenticated){
-      this.props.history.push('/profile');
+      this.props.history.push('/red-flags');
     }
   }
 
