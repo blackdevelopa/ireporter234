@@ -25,12 +25,7 @@ export const loginUser = userData => {
       localStorage.setItem('authorization', response.data.data[0].token)
     })
     .catch(errors => {
-      if(errors.response.data.status === 400) {
-        dispatch(loginUserFailure('sfds'))
-      }
-    console.log(errors.response.data.status, 'sfw')
-    toast('error')
-    dispatch(loginUserFailure(errors));
+      dispatch(loginUserFailure(errors.response.data))
   })
 }
 }
