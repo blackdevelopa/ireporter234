@@ -7,7 +7,7 @@ export const fetchRedflagIncident = () => async dispatch => {
     const res = await axios.get('https://ireporter234.herokuapp.com/api/v1/red-flags', 
     {headers: {authorization: localStorage.getItem('authorization')}}
     );
-    dispatch(actions.fetchIncidentSuccess());
+    dispatch(actions.fetchIncidentSuccess(res.data));
   } catch (error) {
     dispatch(actions.fetchIncidentFailure(error))
   }

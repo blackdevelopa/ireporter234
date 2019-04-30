@@ -3,7 +3,7 @@ import * as actionTypes from '../../actions/action-types';
 const initialState = {
   isLoading: false,
   success: false,
-  error: false,
+  error: '',
   user: null,
 };
 
@@ -30,7 +30,7 @@ const loginReducer = (state = initialState, action) => {
       return {
         ...state,
         isLoading: false,
-        error: true,
+        error: action.error,
         isAuthenticated: false,
       }
     default:

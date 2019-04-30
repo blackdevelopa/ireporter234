@@ -3,6 +3,7 @@ import { Button, Form } from 'semantic-ui-react';
 import { connect }  from "react-redux"
 import {loginUser} from '../../../store/actions/auth/login';
 import { withRouter } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 class LoginForm extends Component {
   state = {
@@ -20,7 +21,8 @@ class LoginForm extends Component {
       password:  this.state.password
     }
 
-    this.props.loginUser(userData);
+    this.props.loginUser(userData)
+
   }
 
   componentDidUpdate() {

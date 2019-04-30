@@ -4,6 +4,7 @@ const initialStart = {
   isLoading: false,
   success: false,
   error: false,
+  intervention: []
 }
 
 const interventionReducer = (state = initialStart, action) => {
@@ -14,14 +15,11 @@ const interventionReducer = (state = initialStart, action) => {
         isLoading: true
       }
     case actionTypes.FETCH_INCIDENT_SUCCESS:
-      const newIncident = {
-        ...action.payload,
-      }
       return {
         ...state,
         isLoading: false,
         success: true,
-        intervention: newIncident,
+        intervention: action.payload.data,
       }
     case actionTypes.FETCH_INCIDENT_FAILURE:
       return {
