@@ -1,44 +1,48 @@
 import * as actionTypes from '../../../actions/action-types';
-import errorReducer from '../../errorReducers';
-import login from '../login';
+import loginReducer from '../login';
 
-const initState = {
+const initialState = {
   isLoading: false,
+  success: false,
+  error: false,
+  isAuthenticated: false,
   response: null,
-  error: null,
-  success: null,
 };
 
 describe('login reducer', () => {
+  const payload = {
+    email: 'dh@hm.com',
+    password: '12345678',
+  };
+
+  it('should return initial state', () => {
+    expect(loginReducer(initialState, {})).toEqual(initialState);
+  });
+
   it('should update state on login successful', () => {
-    const payload = {
-      email: 'dh@hm.com',
-      password: '12345678',
-    };
-    const newState = login(initState, {
-      type: actionTypes.LOGIN_USER_SUCCESS,
-      payload,
-    });
-    const expectedSate = {
-      ...initState,
+    expect(
+      loginReducer(initialState, {
+        type: actionTypes.LOGIN_USER_SUCCESS,
+        payload,
+      })
+    ).toEqual({
+      ...initialState,
       success: true,
-      isLoading: false,
-      response: payload,
-    };
-    expect(newState).toEqual(expectedSate);
+      isAuthenticated: true,
+      user: payload,
+    });
   });
 
   it('should update state on login failure', () => {
-    const payload = {
+    expect(
+      loginReducer(initialState, {
+        type: actionTypes.LOGIN_USER_FAILURE,
+        payload,
+      })
+    ).toEqual({
+      ...initialState,
+      isAuthenticated: false,
       error: true,
-    };
-    const newState = errorReducer(initState, {
-      type: actionTypes.SIGN_IN_FAILURE,
-      payload,
     });
-    const expectedState = {
-      error: true,
-    };
-    expect(newState).toEqual(expectedState);
   });
 });

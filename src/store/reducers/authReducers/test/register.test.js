@@ -1,45 +1,49 @@
 import * as actionTypes from '../../../actions/action-types';
-import errorReducer from '../../errorReducers';
 import register from '../register';
 
-const initState = {
+const initialState = {
   isLoading: false,
   response: null,
-  error: null,
-  success: null,
+  error: false,
+  success: false,
+  isAuthenticated: false,
 };
 
 describe('register reducer', () => {
+  const payload = {
+    username: 'sdfgg',
+    email: 'dh@hm.com',
+    password: '12345678',
+  };
+
+  it('should return initial state', () => {
+    expect(register(initialState, {})).toEqual(initialState);
+  });
+
   it('should update state on register successful', () => {
-    const payload = {
-      username: 'sdfgg',
-      email: 'dh@hm.com',
-      password: '12345678',
-    };
-    const newState = register(initState, {
-      type: actionTypes.REGISTER_USER_SUCCESS,
-      payload,
-    });
-    const expectedSate = {
-      ...initState,
+    expect(
+      register(initialState, {
+        type: actionTypes.REGISTER_USER_SUCCESS,
+        payload,
+      })
+    ).toEqual({
+      ...initialState,
       success: true,
-      isLoading: false,
-      response: payload,
-    };
-    expect(newState).toEqual(expectedSate);
+      isAuthenticated: true,
+      user: payload,
+    });
   });
 
   it('should update state on register failure', () => {
-    const payload = {
+    expect(
+      register(initialState, {
+        type: actionTypes.REGISTER_USER_FAILURE,
+        payload,
+      })
+    ).toEqual({
+      ...initialState,
+      isAuthenticated: false,
       error: true,
-    };
-    const newState = errorReducer(initState, {
-      type: actionTypes.REGISTER_USER_FAILURE,
-      payload,
     });
-    const expectedState = {
-      error: true,
-    };
-    expect(newState).toEqual(expectedState);
   });
 });

@@ -1,4 +1,3 @@
-import axios from 'axios';
 import * as actionTypes from '../action-types';
 
 export const fetchIncidentStart = () => ({
@@ -13,4 +12,18 @@ export const fetchIncidentSuccess = payload => ({
 export const fetchIncidentFailure = payload => ({
   type: actionTypes.FETCH_INCIDENT_FAILURE,
   payload,
-})
+});
+
+export const createIncidentStart = () => ({
+  type: actionTypes.CREATE_INCIDENT_START,
+});
+
+export const createIncidentSuccess = payload => ({
+  type: actionTypes.CREATE_INCIDENT_SUCCESS,
+  payload,
+});
+
+export const createIncidentFailure = payload => ({
+  type: actionTypes.CREATE_INCIDENT_FAILURE,
+  payload,
+});

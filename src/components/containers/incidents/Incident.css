@@ -1,4 +1,17 @@
-.main {
-  display: flex;
-  flex-direction: column;
+.Group {
+  margin-top: 20px;
+}
+
+.Ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-height: 2;
+  max-height: 6;
+}
+
+.Content {
+  margin-top: 40px;
 }

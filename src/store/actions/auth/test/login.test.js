@@ -1,61 +1,33 @@
-import configureMockStore from 'redux-mock-store';
-import thunk from 'redux-thunk';
-import axios from 'axios';
-import MockAdapter from 'axios-mock-adapter';
-import {
-  LOGIN_USER_SUCCESS,
-  LOGIN_USER_FAILURE,
-  LOGIN_USER,
-} from '../../action-types';
+import faker from 'faker';
+import * as actionTypes from '../../action-types';
+import * as actions from '../login';
 
-import login from '../login';
-
-const mockStore = configureMockStore([thunk]);
-const mock = new MockAdapter(axios);
-
-const user = {
-  email: 'dh@hm.com',
+const payload = {
+  email: faker.internet.userName(),
   password: '12345678',
 };
 
+// const mockData = {
+//   data: {
+//     user: {
+//       email: faker.internet.userName(),
+//       token: faker.random.uuid(),
+//     },
+//   },
+// };
+
 describe('login actions', () => {
-  afterEach(() => {
-    mock.reset();
+  it('should create action for login start', () => {
+    const expectedActions = {
+      type: actionTypes.LOGIN_USER_START,
+    };
+    expect(actions.loginUserStart()).toEqual(expectedActions);
   });
-
-  it('logs a user successfully', () => {
-    mock
-      .onPost(`https://ireporter234.herokuapp.com/api/v1/auth/login`)
-      .reply(201, {
-        user,
-      });
-    const expectedActions = [
-      { type: LOGIN_USER },
-      { type: LOGIN_USER_SUCCESS, payload: { user } },
-    ];
-    const store = mockStore({ login: {} });
-    return store.dispatch(
-      login().then(() => {
-        expect(store.getActions()).toEqual(expectedActions);
-      })
-    );
-  });
-
-  it('does not logs a user successfully', () => {
-    mock
-      .onPost(`https://ireporter234.herokuapp.com/api/v1/auth/login`)
-      .reply(400, {
-        error: null,
-      });
-    const expectedActions = [
-      { type: LOGIN_USER },
-      { type: LOGIN_USER_FAILURE, payload: { error: null } },
-    ];
-    const store = mockStore({ login: {} });
-    return store.dispatch(
-      login().catch(() => {
-        expect(store.getActions()).toEqual(expectedActions);
-      })
-    );
+  it('should create action for login success', () => {
+    const expectedActions = {
+      type: actionTypes.LOGIN_USER_SUCCESS,
+      payload,
+    };
+    expect(actions.loginUserSuccess(payload).toEqual(expectedActions));
   });
 });
