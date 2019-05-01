@@ -1,6 +1,4 @@
-import {
-  CLEAR_AUTH_ERRORS,
-} from '../actions/action-types';
+import { CLEAR_AUTH_ERRORS } from '../actions/action-types';
 
 export default (state = {}, action) => {
   switch (action.type) {

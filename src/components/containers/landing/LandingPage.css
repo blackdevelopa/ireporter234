@@ -1,5 +1,5 @@
 .Body {
-  background-image: url('../../../assets/background.jpeg');
+  background-image: url('../../../../public/assets/background.jpeg');
   background-size: cover;
   background-color: rgba(0, 0, 0, 0.5);
   background-blend-mode: overlay;

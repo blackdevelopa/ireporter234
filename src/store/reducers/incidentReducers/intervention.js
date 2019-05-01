@@ -4,29 +4,47 @@ const initialStart = {
   isLoading: false,
   success: false,
   error: false,
-  intervention: []
-}
+  intervention: [],
+};
 
 const interventionReducer = (state = initialStart, action) => {
-  switch(action.types) {
+  switch (action.types) {
     case actionTypes.FETCH_INCIDENT_START:
       return {
         ...state,
-        isLoading: true
-      }
+        isLoading: true,
+      };
     case actionTypes.FETCH_INCIDENT_SUCCESS:
       return {
         ...state,
         isLoading: false,
         success: true,
         intervention: action.payload.data,
-      }
+      };
     case actionTypes.FETCH_INCIDENT_FAILURE:
       return {
         ...state,
         isLoading: false,
         error: true,
-      }
+      };
+    case actionTypes.CREATE_INCIDENT_START:
+      return {
+        ...state,
+        isLoading: true,
+      };
+    case actionTypes.CREATE_INCIDENT_SUCCESS:
+      return {
+        ...state,
+        isLoading: false,
+        success: true,
+        Intervention: action.payload.data,
+      };
+    case actionTypes.CREATE_INCIDENT_FAILURE:
+      return {
+        ...state,
+        isLoading: false,
+        error: true,
+      };
     default:
       return state;
   }
