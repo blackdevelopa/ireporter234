@@ -5,7 +5,6 @@ import React, { Component } from 'react';
 import { Button, Form } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-// import { toast } from 'react-toastify';
 import { loginUser } from '../../../store/actions/auth/login';
 
 class LoginForm extends Component {
@@ -37,21 +36,19 @@ class LoginForm extends Component {
     return (
       <Form onSubmit={this.handleSubmit}>
         <Form.Field>
-          {/* <label>Email Address</label> */}
+          <label htmlFor="email">Email Address</label>
           <input
             placeholder="name@email.com"
             onChange={this.onChange}
             name="email"
-            // value={this.state.email}
           />
         </Form.Field>
         <Form.Field>
-          {/* <label>Password</label> */}
+          <label htmlFor="password">Password</label>
           <input
             placeholder="secret"
             onChange={this.onChange}
             name="password"
-            // value={this.state.password}
           />
         </Form.Field>
         <Button type="submit" style={{ background: 'grey', color: 'white' }}>

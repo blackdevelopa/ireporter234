@@ -1,11 +1,10 @@
-/* eslint-disable no-undef */
 /* eslint-disable react/prop-types */
 /* eslint-disable react/destructuring-assignment */
-/* eslint-disable require-jsdoc */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { Card } from 'semantic-ui-react';
+import { Container, Card } from 'semantic-ui-react';
+import classes from './Incident.css';
 import Navbar from '../../navbar/Navbar';
 import SwitchNav from '../../navbar/switchNav/SwitchNav';
 import { fetchInterventionIncident } from '../../../store/actions/incident/intervention-dispatcher';
@@ -17,18 +16,27 @@ class Intervention extends Component {
 
   render() {
     const interventionInfo = this.props.intervention.map(data => {
+      const descriptionText = (
+        <div className={classes.Ellipsis}>{data.comment}</div>
+      );
       return {
-        image: { pic },
+        image: data.images,
         header: data.location,
-        description: data.comment,
-        meta: data.createdon,
+        extra: data.status,
+        description: descriptionText,
+        meta: data.createdon.substr(0, 10),
       };
     });
+
     return (
-      <div>
+      <div className={classes.main}>
         <Navbar name="Profile" />
         <SwitchNav />
-        <Card.Group items={interventionInfo} />
+        <div className={classes.Group}>
+          <Container>
+            <Card.Group items={interventionInfo} centered />
+          </Container>
+        </div>
       </div>
     );
   }

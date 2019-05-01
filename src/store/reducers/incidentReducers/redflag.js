@@ -5,6 +5,7 @@ const initialStart = {
   success: false,
   error: false,
   redflag: [],
+  newRedflag: false,
 };
 
 const redflagReducer = (state = initialStart, action) => {
@@ -37,7 +38,7 @@ const redflagReducer = (state = initialStart, action) => {
         ...state,
         isLoading: false,
         success: true,
-        redflag: action.payload.data,
+        newRedflag: action.payload.data,
       };
     case actionTypes.CREATE_INCIDENT_FAILURE:
       return {

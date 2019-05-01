@@ -16,7 +16,7 @@ class RegisterForm extends Component {
 
   componentDidUpdate() {
     if (this.props.isAuthenticated) {
-      this.props.history.push('/profile');
+      this.props.history.push('/red-flags');
     }
   }
 
@@ -36,14 +36,15 @@ class RegisterForm extends Component {
     return (
       <Form onSubmit={this.onSubmit}>
         <Form.Field
-          label="Your Location"
+          label="Full Name"
           control={Input}
-          placeholder="first name"
+          placeholder="full name"
           onChange={this.onChange}
           name="firstname"
           value={this.state.name}
         />
         <Form.Field
+          label="Userame"
           control={Input}
           placeholder="username"
           onChange={this.onChange}
@@ -51,6 +52,7 @@ class RegisterForm extends Component {
           value={this.state.name}
         />
         <Form.Field
+          label="Email Address"
           control={Input}
           placeholder="name@email.com"
           onChange={this.onChange}
@@ -58,6 +60,7 @@ class RegisterForm extends Component {
           value={this.state.email}
         />
         <Form.Field
+          label="Password"
           control={Input}
           placeholder="secret"
           onChange={this.onChange}

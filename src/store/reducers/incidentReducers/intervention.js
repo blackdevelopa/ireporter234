@@ -5,6 +5,7 @@ const initialStart = {
   success: false,
   error: false,
   intervention: [],
+  newIntervention: false,
 };
 
 const interventionReducer = (state = initialStart, action) => {
@@ -37,7 +38,7 @@ const interventionReducer = (state = initialStart, action) => {
         ...state,
         isLoading: false,
         success: true,
-        Intervention: action.payload.data,
+        newIntervention: action.payload.data,
       };
     case actionTypes.CREATE_INCIDENT_FAILURE:
       return {

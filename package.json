@@ -27,6 +27,7 @@
     "@babel/plugin-proposal-class-properties": "7.2.3",
     "axios": "0.18.0",
     "babel-jest": "24.5.0",
+    "cloudinary-react": "^1.1.0",
     "dotenv": "6.2.0",
     "enzyme": "3.9.0",
     "enzyme-adapter-react-16": "1.11.2",
@@ -37,8 +38,9 @@
     "lodash": "4.17.11",
     "postcss-loader": "3.0.0",
     "prop-types": "^15.7.2",
-    "react": "16.6.0",
+    "react": "^16.6.0",
     "react-dom": "16.6.0",
+    "react-dropzone": "^10.1.4",
     "react-redux": "6.0.0",
     "react-router-dom": "4.3.1",
     "react-spinners": "0.5.3",
@@ -52,6 +54,7 @@
     "redux-thunk": "2.3.0",
     "semantic-ui-css": "2.4.1",
     "semantic-ui-react": "0.86.0",
+    "superagent": "^5.0.5",
     "webpack": "4.29.6"
   },
   "devDependencies": {

@@ -1,6 +1,6 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable no-unused-vars */
-/* eslint-disable require-jsdoc */
 import React, { Component } from 'react';
 import {
   Container,
@@ -10,29 +10,43 @@ import {
   TextArea,
   Select,
 } from 'semantic-ui-react';
-import { connect } from 'react-redux';
-import SwitchNav from '../../navbar/switchNav/SwitchNav';
-import Navbar from '../../navbar/Navbar';
+import {
+  Image,
+  Video,
+  Transformation,
+  CloudinaryContext,
+} from 'cloudinary-react';
 
-const type = [
-  { key: 'r', text: 'Redflag', value: 'redflag' },
-  { key: 'i', text: 'Intervention', value: 'intervention' },
-];
-class createNewIncident extends Component {
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+import SwitchNav from '../../navbar/switchNav/SwitchNav';
+import classes from './Incident.css';
+import Navbar from '../../navbar/Navbar';
+import { createRedflagIncident } from '../../../store/actions/incident/redflag-dispatchers';
+
+class createNewRedFlag extends Component {
   state = {
     location: '',
-    type: '',
-    media: '',
+    images: '',
     comment: '',
   };
 
-  handleSubmit = () => {
+  handleInputChange = e => {
+    const { value, name } = e.target;
+    this.setState({ [name]: value });
+  };
+
+  handleSubmit = async e => {
+    e.preventDefault();
     const incidentData = {
       location: this.state.location,
       comment: this.state.comment,
-      type: this.state.type,
-      media: this.state.media,
+      images: this.state.images,
     };
+    await this.props.createRedflagIncident(incidentData);
+    if (this.props.newRedflag) {
+      this.props.history.push('/red-flags');
+    }
   };
 
   render() {
@@ -40,38 +54,36 @@ class createNewIncident extends Component {
       <div>
         <Navbar />
         <SwitchNav />
-        <Container>
+        <Container className={classes.Content}>
           <Form onSubmit={this.handleSubmit}>
             <Form.Group widths="equal">
               <Form.Field
                 control={Input}
                 label="Your Location"
                 name="location"
-                value={this.state.location}
+                onChange={this.handleInputChange}
                 placeholder="lagos..."
-                required
-              />
-              <Form.Field
-                control={Select}
-                label="What are you reporting"
-                name="type"
-                options={type}
-                placeholder="redflag..."
                 required
               />
             </Form.Group>
             <Form.Field
               control={Input}
-              label="Upload media"
+              label="Upload image"
+              name="images"
+              onChange={this.handleInputChange}
               placeholder="click to upload"
             />
             <Form.Field
               control={TextArea}
               label="Comment"
+              name="comment"
+              onChange={this.handleInputChange}
               placeholder="Share what you can see..."
               required
             />
-            <Form.Field control={Button}>Submit</Form.Field>
+            <Form.Field fluid control={Button}>
+              Submit
+            </Form.Field>
           </Form>
         </Container>
       </div>
@@ -79,6 +91,11 @@ class createNewIncident extends Component {
   }
 }
 
-const mapStateToProps = state => ({});
+const mapStateToProps = state => ({
+  newRedflag: state.redflag.redflag,
+});
 
-export default connect(null)(createNewIncident);
+export default connect(
+  mapStateToProps,
+  { createRedflagIncident }
+)(withRouter(createNewRedFlag));

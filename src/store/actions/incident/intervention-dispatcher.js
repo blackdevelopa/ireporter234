@@ -8,7 +8,7 @@ export const fetchInterventionIncident = () => async dispatch => {
       'http://ireporter234.herokuapp.com/api/v1/interventions',
       { headers: { authorization: localStorage.getItem('authorization') } }
     );
-    dispatch(actions.fetchIncidentSuccess(response.data.incident));
+    dispatch(actions.fetchIncidentSuccess(response.data));
   } catch (errors) {
     dispatch(actions.fetchIncidentFailure());
   }
@@ -22,7 +22,7 @@ export const createInterventionIncident = incidentData => async dispatch => {
       incidentData,
       { headers: { authorization: localStorage.getItem('authorization') } }
     );
-    dispatch(actions.createIncidentSuccess(response.data.incident));
+    dispatch(actions.createIncidentSuccess(response.data.data));
   } catch (error) {
     dispatch(actions.createIncidentFailure(error));
   }

@@ -26,7 +26,7 @@ export const createRedflagIncident = incidentData => async dispatch => {
         },
       }
     );
-    dispatch(actions.createIncidentSuccess(response.data.incident));
+    dispatch(actions.createIncidentSuccess(response.data.data));
   } catch (error) {
     dispatch(actions.createIncidentFailure(error));
   }
