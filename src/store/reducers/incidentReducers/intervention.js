@@ -6,6 +6,7 @@ const initialStart = {
   error: false,
   intervention: [],
   newIntervention: false,
+  singleIntervention: [],
 };
 
 const interventionReducer = (state = initialStart, action) => {

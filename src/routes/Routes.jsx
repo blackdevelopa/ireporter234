@@ -8,6 +8,7 @@ import NewRedflag from '../components/containers/incidents/NewRedFlag';
 import NewIntervention from '../components/containers/incidents/NewIntervention';
 import Admin from '../components/containers/dashboard/AdminDashboard';
 import SingleRedFlag from '../components/containers/incidents/SingleRedFlag';
+import SingleIntervention from '../components/containers/incidents/SingleIntervention';
 import Notfound from '../components/containers/incidents/NotFound';
 
 const Routes = () => {
@@ -20,6 +21,7 @@ const Routes = () => {
       <Route path="/new-red-flag" component={NewRedflag} exact />
       <Route path="/new-intervention" component={NewIntervention} />
       <Route path="/red-flags/:id?" component={SingleRedFlag} />
+      <Route path="/intervention/:id?" component={SingleIntervention} />
       <Route path="/admin" component={Admin} />
       <Route component={Notfound} />
     </Switch>
