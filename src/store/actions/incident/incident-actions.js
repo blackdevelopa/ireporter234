@@ -27,3 +27,17 @@ export const createIncidentFailure = payload => ({
   type: actionTypes.CREATE_INCIDENT_FAILURE,
   payload,
 });
+
+export const fetchSingleIncidentStart = () => ({
+  type: actionTypes.FETCH_SINGLE_INCIDENT_START,
+});
+
+export const fetchSingleIncidentSuccess = payload => ({
+  type: actionTypes.FETCH_SINGLE_INCIDENT_SUCCESS,
+  payload,
+});
+
+export const fetchSingleIncidentFailure = payload => ({
+  type: actionTypes.FETCH_SINGLE_INCIDENT_FAILURE,
+  payload,
+});

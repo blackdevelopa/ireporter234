@@ -19,13 +19,13 @@ export const loginUser = userData => {
   return dispatch => {
     dispatch(loginUserStart());
     axios
-      .post('https://ireporter234.herokuapp.com/api/v1/auth/login', userData)
+      .post('https://ireporter-node.herokuapp.com/api/v1/auth/login', userData)
       .then(response => {
         dispatch(loginUserSuccess(response.data));
         localStorage.setItem('authorization', response.data.data[0].token);
       })
       .catch(errors => {
-        dispatch(loginUserFailure(errors.response.data));
+        dispatch(loginUserFailure(errors));
       });
   };
 };

@@ -6,6 +6,7 @@ const initialStart = {
   error: false,
   intervention: [],
   newIntervention: false,
+  singleIntervention: [],
 };
 
 const interventionReducer = (state = initialStart, action) => {
@@ -41,6 +42,24 @@ const interventionReducer = (state = initialStart, action) => {
         newIntervention: action.payload.data,
       };
     case actionTypes.CREATE_INCIDENT_FAILURE:
+      return {
+        ...state,
+        isLoading: false,
+        error: true,
+      };
+    case actionTypes.FETCH_SINGLE_INCIDENT_START:
+      return {
+        ...state,
+        isLoading: true,
+      };
+    case actionTypes.FETCH_SINGLE_INCIDENT_SUCCESS:
+      return {
+        ...state,
+        isLoading: false,
+        success: true,
+        singleIntervention: action.payload.data,
+      };
+    case actionTypes.FETCH_SINGLE_INCIDENT_FAILURE:
       return {
         ...state,
         isLoading: false,

@@ -5,7 +5,7 @@ export const fetchInterventionIncident = () => async dispatch => {
   dispatch(actions.fetchIncidentStart());
   try {
     const response = await axios.get(
-      'http://ireporter234.herokuapp.com/api/v1/interventions',
+      'https://ireporter-node.herokuapp.com/api/v1/interventions',
       { headers: { authorization: localStorage.getItem('authorization') } }
     );
     dispatch(actions.fetchIncidentSuccess(response.data));
@@ -18,12 +18,26 @@ export const createInterventionIncident = incidentData => async dispatch => {
   dispatch(actions.createIncidentStart());
   try {
     const response = await axios.post(
-      'http://ireporter234.herokuapp.com/api/v1/interventions',
+      'https://ireporter-node.herokuapp.com/api/v1/interventions',
       incidentData,
       { headers: { authorization: localStorage.getItem('authorization') } }
     );
     dispatch(actions.createIncidentSuccess(response.data.data));
   } catch (error) {
     dispatch(actions.createIncidentFailure(error));
+  }
+};
+
+export const fetchSingleInterventionIncident = id => async dispatch => {
+  dispatch(actions.fetchSingleIncidentStart());
+  try {
+    const response = await axios.get(
+      `https://ireporter-node.herokuapp.com/api/v1/interventions/${id}`,
+      id,
+      { headers: { authorization: localStorage.getItem('authorization') } }
+    );
+    dispatch(actions.fetchSingleIncidentSuccess(response.data.data));
+  } catch (error) {
+    dispatch(actions.fetchSingleIncidentFailure(error));
   }
 };
