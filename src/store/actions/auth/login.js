@@ -10,9 +10,9 @@ export const loginUserSuccess = payload => ({
   payload,
 });
 
-export const loginUserFailure = errors => ({
+export const loginUserFailure = payload => ({
   type: actionTypes.LOGIN_USER_FAILURE,
-  error: errors,
+  payload,
 });
 
 export const loginUser = userData => {

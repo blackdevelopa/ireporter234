@@ -11,8 +11,6 @@ import SingleRedFlag from '../components/containers/incidents/SingleRedFlag';
 import SingleIntervention from '../components/containers/incidents/SingleIntervention';
 import Notfound from '../components/containers/incidents/NotFound';
 
-// require('dotenv').config();
-
 const Routes = () => {
   return (
     <Switch>

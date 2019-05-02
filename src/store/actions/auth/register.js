@@ -1,25 +1,19 @@
 import axios from 'axios';
 import * as actionTypes from '../action-types';
 
-export const registerUserStart = () => {
-  return {
-    type: actionTypes.REGISTER_USER_START,
-  };
-};
+export const registerUserStart = () => ({
+  type: actionTypes.REGISTER_USER_START,
+});
 
-export const registerUserSuccess = payload => {
-  return {
-    type: actionTypes.REGISTER_USER_SUCCESS,
-    payload,
-  };
-};
+export const registerUserSuccess = payload => ({
+  type: actionTypes.REGISTER_USER_SUCCESS,
+  payload,
+});
 
-export const registerUserFailure = error => {
-  return {
-    type: actionTypes.REGISTER_USER_FAILURE,
-    error,
-  };
-};
+export const registerUserFailure = payload => ({
+  type: actionTypes.REGISTER_USER_FAILURE,
+  payload,
+});
 
 export const registerUser = userData => {
   return dispatch => {

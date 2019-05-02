@@ -16,8 +16,7 @@ class RegisterForm extends Component {
 
   componentDidUpdate() {
     if (this.props.isAuthenticated) {
-      // this.props.history.push('/red-flags');
-      // console.log(this.props.isAuthenticated);
+      this.props.history.push('/red-flags');
     }
   }
 
