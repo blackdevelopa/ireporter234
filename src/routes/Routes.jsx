@@ -7,17 +7,21 @@ import Intervention from '../components/containers/incidents/Intervention';
 import NewRedflag from '../components/containers/incidents/NewRedFlag';
 import NewIntervention from '../components/containers/incidents/NewIntervention';
 import Admin from '../components/containers/dashboard/AdminDashboard';
+import SingleRedFlag from '../components/containers/incidents/SingleRedFlag';
+import Notfound from '../components/containers/incidents/NotFound';
 
 const Routes = () => {
   return (
     <Switch>
       <Route path="/" component={LandingPage} exact />
-      <Route path="/red-flags" component={RedFlag} />
+      <Route path="/red-flags/" component={RedFlag} exact />
       <Route path="/interventions" component={Intervention} />
       <Route path="/dashboard" component={Profile} />
-      <Route path="/new-red-flag" component={NewRedflag} />
+      <Route path="/new-red-flag" component={NewRedflag} exact />
       <Route path="/new-intervention" component={NewIntervention} />
+      <Route path="/red-flags/:id?" component={SingleRedFlag} />
       <Route path="/admin" component={Admin} />
+      <Route component={Notfound} />
     </Switch>
   );
 };

@@ -46,6 +46,24 @@ const interventionReducer = (state = initialStart, action) => {
         isLoading: false,
         error: true,
       };
+    case actionTypes.FETCH_SINGLE_INCIDENT_START:
+      return {
+        ...state,
+        isLoading: true,
+      };
+    case actionTypes.FETCH_SINGLE_INCIDENT_SUCCESS:
+      return {
+        ...state,
+        isLoading: false,
+        success: true,
+        singleIntervention: action.payload.data,
+      };
+    case actionTypes.FETCH_SINGLE_INCIDENT_FAILURE:
+      return {
+        ...state,
+        isLoading: false,
+        error: true,
+      };
     default:
       return state;
   }

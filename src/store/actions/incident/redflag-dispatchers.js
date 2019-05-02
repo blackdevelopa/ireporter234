@@ -31,3 +31,20 @@ export const createRedflagIncident = incidentData => async dispatch => {
     dispatch(actions.createIncidentFailure(error));
   }
 };
+
+export const fetchSingleRedflagIncident = id => async dispatch => {
+  dispatch(actions.fetchSingleIncidentStart());
+  try {
+    const response = await axios.get(
+      `https://ireporter-node.herokuapp.com/api/v1/red-flags/${id}`,
+      {
+        headers: {
+          authorization: localStorage.getItem('authorization'),
+        },
+      }
+    );
+    dispatch(actions.fetchSingleIncidentSuccess(response.data.data));
+  } catch (error) {
+    dispatch(actions.fetchSingleIncidentFailure(error));
+  }
+};

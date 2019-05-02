@@ -27,3 +27,17 @@ export const createInterventionIncident = incidentData => async dispatch => {
     dispatch(actions.createIncidentFailure(error));
   }
 };
+
+export const fetchSingleInterventionIncident = id => async dispatch => {
+  dispatch(actions.fetchSingleIncidentStart());
+  try {
+    const response = await axios.get(
+      `https://ireporter-node.herokuapp.com/api/v1/interventions/${id}`,
+      id,
+      { headers: { authorization: localStorage.getItem('authorization') } }
+    );
+    dispatch(actions.fetchSingleIncidentSuccess(response.data.data));
+  } catch (error) {
+    dispatch(actions.fetchSingleIncidentFailure(error));
+  }
+};
