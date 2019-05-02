@@ -2,7 +2,7 @@
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable require-jsdoc */
 import React, { Component } from 'react';
-import { Button, Form } from 'semantic-ui-react';
+import { Button, Form, Input } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { loginUser } from '../../../store/actions/auth/login';
@@ -35,22 +35,23 @@ class LoginForm extends Component {
   render() {
     return (
       <Form onSubmit={this.handleSubmit}>
-        <Form.Field>
-          <label htmlFor="email">Email Address</label>
-          <input
-            placeholder="name@email.com"
-            onChange={this.onChange}
-            name="email"
-          />
-        </Form.Field>
-        <Form.Field>
-          <label htmlFor="password">Password</label>
-          <input
-            placeholder="secret"
-            onChange={this.onChange}
-            name="password"
-          />
-        </Form.Field>
+        <Form.Field
+          label="Email Address"
+          control={Input}
+          placeholder="name@email.com"
+          type="email"
+          required
+          onChange={this.onChange}
+          name="email"
+        />
+        <Form.Field
+          label="Password"
+          control={Input}
+          placeholder="secret"
+          required
+          onChange={this.onChange}
+          name="password"
+        />
         <Button type="submit" style={{ background: 'grey', color: 'white' }}>
           Login
         </Button>

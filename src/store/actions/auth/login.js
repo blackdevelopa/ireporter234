@@ -19,7 +19,7 @@ export const loginUser = userData => {
   return dispatch => {
     dispatch(loginUserStart());
     axios
-      .post('https://ireporter-node.herokuapp.com/api/v1/auth/login', userData)
+      .post(`${process.env.baseURL}/auth/login`, userData)
       .then(response => {
         dispatch(loginUserSuccess(response.data));
         localStorage.setItem('authorization', response.data.data[0].token);

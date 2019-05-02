@@ -5,7 +5,7 @@ require('dotenv').config();
 const logger = require('debug')('iReporter:server ');
 
 const app = express();
-const port = process.env.PORT || 8000;
+const port = process.env.PORT;
 
 app.use('/', express.static('dist'));
 
