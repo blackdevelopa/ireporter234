@@ -22,7 +22,7 @@ import { withRouter } from 'react-router-dom';
 import SwitchNav from '../../navbar/switchNav/SwitchNav';
 import classes from './Incident.css';
 import Navbar from '../../navbar/Navbar';
-import { createInterventionIncident } from '../../../store/actions/incident/intervention-dispatcher';
+import { createInterventionIncident } from '../../../store/actions/incident/intervention';
 
 class createNewIntervention extends Component {
   state = {

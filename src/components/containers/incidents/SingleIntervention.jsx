@@ -8,11 +8,11 @@ import { Card } from 'semantic-ui-react';
 import Navbar from '../../navbar/Navbar';
 import SwitchNav from '../../navbar/switchNav/SwitchNav';
 import classes from './Incident.css';
-import { fetchSingleInterventionIncident } from '../../../store/actions/incident/intervention-dispatcher';
+import { fetchSingleIncident } from '../../../store/actions/incident/incident';
 
 class SingleIntervention extends Component {
   componentDidMount() {
-    this.props.fetchSingleInterventionIncident(this.props.match.params.id);
+    this.props.fetchSingleIncident('intervention', this.props.match.params.id);
   }
 
   render() {
@@ -42,5 +42,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { fetchSingleInterventionIncident }
+  { fetchSingleIncident }
 )(withRouter(SingleIntervention));

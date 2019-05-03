@@ -27,7 +27,7 @@ describe('intervention reducer', () => {
       })
     ).toEqual({
       ...initialState,
-      intervention: { ...payload },
+      intervention: payload,
     });
   });
 

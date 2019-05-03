@@ -22,7 +22,7 @@ import { withRouter } from 'react-router-dom';
 import SwitchNav from '../../navbar/switchNav/SwitchNav';
 import classes from './Incident.css';
 import Navbar from '../../navbar/Navbar';
-import { createRedflagIncident } from '../../../store/actions/incident/redflag-dispatchers';
+import { createIncident } from '../../../store/actions/incident/incident';
 
 class createNewRedFlag extends Component {
   state = {
@@ -43,7 +43,7 @@ class createNewRedFlag extends Component {
       comment: this.state.comment,
       images: this.state.images,
     };
-    await this.props.createRedflagIncident(incidentData);
+    await this.props.createIncident('red-flags', incidentData);
     if (this.props.newRedflag) {
       this.props.history.push('/red-flags');
     }
@@ -97,5 +97,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { createRedflagIncident }
+  { createIncident }
 )(withRouter(createNewRedFlag));

@@ -27,7 +27,7 @@ describe('redflag reducer', () => {
       })
     ).toEqual({
       ...initialState,
-      redflag: { ...payload },
+      redflag: payload,
     });
   });
 

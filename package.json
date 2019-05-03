@@ -3,11 +3,12 @@
   "version": "0.1.0",
   "description": "Introduction iReporter seeks to provide a platform that allows users report corruption cases and interventions to designated authorities.",
   "scripts": {
-    "dev": "webpack-dev-server --hot --open",
+    "dev": "DEBUG=iReporter234* webpack-dev-server --hot --open",
     "runserver": " npm run build && npm run start",
     "start": "DEBUG=iReporter234* node server.js",
     "build": "DEBUG=iReporter234*  rm -rf dist && webpack --mode production",
-    "test": "jest"
+    "lint": "./node_modules/eslint/bin/eslint.js . --ext .js,.jsx",
+    "test": "jest --coverage --colors"
   },
   "repository": {
     "type": "git",
@@ -28,10 +29,13 @@
     "axios": "0.18.0",
     "babel-jest": "24.5.0",
     "cloudinary-react": "^1.1.0",
-    "dotenv": "6.2.0",
+    "debug": "^4.1.1",
+    "dotenv": "^6.2.0",
+    "dotenv-webpack": "^1.7.0",
     "enzyme": "3.9.0",
     "enzyme-adapter-react-16": "1.11.2",
     "express": "4.16.4",
+    "faker": "^4.1.0",
     "history": "4.7.2",
     "html-webpack-plugin": "^3.2.0",
     "jest": "24.5.0",

@@ -7,7 +7,7 @@ import { withRouter } from 'react-router-dom';
 import { Card } from 'semantic-ui-react';
 import Navbar from '../../navbar/Navbar';
 import SwitchNav from '../../navbar/switchNav/SwitchNav';
-import { fetchSingleRedflagIncident } from '../../../store/actions/incident/redflag-dispatchers';
+import { fetchSingleRedflagIncident } from '../../../store/actions/incident/redflag';
 import classes from './Incident.css';
 
 class SingleRedFlag extends Component {

@@ -20,8 +20,11 @@ class RegisterForm extends Component {
     }
   }
 
-  onSubmit = e => {
-    e.preventDefault();
+  onChange = e => {
+    this.setState({ [e.target.name]: e.target.value });
+  };
+
+  handleSubmit = () => {
     const userData = {
       email: this.state.email,
       password: this.state.password,
@@ -34,10 +37,11 @@ class RegisterForm extends Component {
 
   render() {
     return (
-      <Form onSubmit={this.onSubmit}>
+      <Form onSubmit={this.handleSubmit}>
         <Form.Field
           label="Full Name"
           control={Input}
+          required
           placeholder="full name"
           onChange={this.onChange}
           name="firstname"
@@ -49,6 +53,7 @@ class RegisterForm extends Component {
           placeholder="username"
           onChange={this.onChange}
           name="username"
+          required
           value={this.state.name}
         />
         <Form.Field
@@ -57,6 +62,8 @@ class RegisterForm extends Component {
           placeholder="name@email.com"
           onChange={this.onChange}
           name="email"
+          required
+          type="email"
           value={this.state.email}
         />
         <Form.Field
@@ -65,6 +72,8 @@ class RegisterForm extends Component {
           placeholder="secret"
           onChange={this.onChange}
           name="password"
+          minLength="6"
+          required
           value={this.state.password}
         />
         <Form.Field
@@ -81,6 +90,7 @@ class RegisterForm extends Component {
 
 const mapStateToProps = state => ({
   isAuthenticated: state.register.isAuthenticated,
+  register: state.register,
 });
 
 export default connect(
