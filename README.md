@@ -1,4 +1,5 @@
 # iReporter Application
+[![Build Status](https://travis-ci.com/blackdevelopa/ireporter234.svg?branch=develop)](https://travis-ci.com/blackdevelopa/ireporter234)
 [![Maintainability](https://api.codeclimate.com/v1/badges/d008d55dd4aef0efd93c/maintainability)](https://codeclimate.com/github/blackdevelopa/ireporter234/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/d008d55dd4aef0efd93c/test_coverage)](https://codeclimate.com/github/blackdevelopa/ireporter234/test_coverage)
 
