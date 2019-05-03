@@ -7,7 +7,7 @@ import { Container, Card } from 'semantic-ui-react';
 import classes from './Incident.css';
 import Navbar from '../../navbar/Navbar';
 import SwitchNav from '../../navbar/switchNav/SwitchNav';
-import { fetchInterventionIncident } from '../../../store/actions/incident/intervention-dispatcher';
+import { fetchInterventionIncident } from '../../../store/actions/incident/intervention';
 
 class Intervention extends Component {
   componentDidMount() {

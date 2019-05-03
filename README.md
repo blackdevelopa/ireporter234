@@ -1,4 +1,6 @@
 # iReporter Application
+[![Maintainability](https://api.codeclimate.com/v1/badges/d008d55dd4aef0efd93c/maintainability)](https://codeclimate.com/github/blackdevelopa/ireporter234/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/d008d55dd4aef0efd93c/test_coverage)](https://codeclimate.com/github/blackdevelopa/ireporter234/test_coverage)
 
 iReporter is a reporting application for users/citizens to communicate any form of corruption to the notice of the appropriate authorities. Users can also report on things that needs government intervention.
 

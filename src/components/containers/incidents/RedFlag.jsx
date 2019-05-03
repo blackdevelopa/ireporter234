@@ -7,7 +7,7 @@ import { Container, Card } from 'semantic-ui-react';
 import classes from './Incident.css';
 import Navbar from '../../navbar/Navbar';
 import SwitchNav from '../../navbar/switchNav/SwitchNav';
-import { fetchRedflagIncident } from '../../../store/actions/incident/redflag-dispatchers';
+import { fetchRedflagIncident } from '../../../store/actions/incident/redflag';
 
 class Redflag extends Component {
   componentDidMount() {
