@@ -2,27 +2,13 @@
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable no-unused-vars */
 import React, { Component } from 'react';
-import {
-  Container,
-  Button,
-  Form,
-  Input,
-  TextArea,
-  Select,
-} from 'semantic-ui-react';
-import {
-  Image,
-  Video,
-  Transformation,
-  CloudinaryContext,
-} from 'cloudinary-react';
-
+import { Container, Button, Form, Input, TextArea } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import SwitchNav from '../../navbar/switchNav/SwitchNav';
 import classes from './Incident.css';
 import Navbar from '../../navbar/Navbar';
-import { createInterventionIncident } from '../../../store/actions/incident/intervention';
+import { createNewIncident } from '../../../store/actions/incident/incident';
 
 class createNewIntervention extends Component {
   state = {
@@ -43,7 +29,7 @@ class createNewIntervention extends Component {
       comment: this.state.comment,
       images: this.state.images,
     };
-    await this.props.createInterventionIncident(incidentData);
+    await this.props.createNewIncident('interventions', incidentData);
     if (this.props.newIntervention) {
       this.props.history.push('/interventions');
     }
@@ -92,10 +78,10 @@ class createNewIntervention extends Component {
 }
 
 const mapStateToProps = state => ({
-  newIntervention: state.intervention.intervention,
+  newIntervention: state.intervention.newIntervention,
 });
 
 export default connect(
   mapStateToProps,
-  { createInterventionIncident }
+  { createNewIncident }
 )(withRouter(createNewIntervention));

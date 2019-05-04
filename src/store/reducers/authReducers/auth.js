@@ -4,17 +4,18 @@ const initialState = {
   isLoading: false,
   success: false,
   error: false,
-  user: null,
 };
 
-const loginReducer = (state = initialState, action) => {
+const authReducer = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.LOGIN_USER_START:
+    case actionTypes.REGISTER_USER_START:
       return {
         ...state,
         isLoading: true,
       };
     case actionTypes.LOGIN_USER_SUCCESS:
+    case actionTypes.REGISTER_USER_SUCCESS:
       return {
         ...state,
         isLoading: false,
@@ -23,15 +24,15 @@ const loginReducer = (state = initialState, action) => {
         isAuthenticated: true,
       };
     case actionTypes.LOGIN_USER_FAILURE:
+    case actionTypes.REGISTER_USER_FAILURE:
       return {
         ...state,
         isLoading: false,
         error: true,
-        isAuthenticated: false,
       };
     default:
       return state;
   }
 };
 
-export default loginReducer;
+export default authReducer;

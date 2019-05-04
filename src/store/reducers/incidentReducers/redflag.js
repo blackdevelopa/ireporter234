@@ -11,37 +11,37 @@ const initialStart = {
 
 const redflagReducer = (state = initialStart, action) => {
   switch (action.type) {
-    case actionTypes.FETCH_INCIDENT_START:
+    case actionTypes.FETCH_ALL_INCIDENT_START:
       return {
         ...state,
         isLoading: true,
       };
-    case actionTypes.FETCH_INCIDENT_SUCCESS:
+    case `${actionTypes.FETCH_ALL_INCIDENT_SUCCESS}_RED-FLAGS`:
       return {
         ...state,
         isLoading: false,
         success: true,
-        redflag: action.payload.data,
+        redflag: action.payload,
       };
-    case actionTypes.FETCH_INCIDENT_FAILURE:
+    case actionTypes.FETCH_ALL_INCIDENT_FAILURE:
       return {
         ...state,
         isLoading: false,
         error: true,
       };
-    case actionTypes.CREATE_INCIDENT_START:
+    case actionTypes.CREATE_NEW_INCIDENT_START:
       return {
         ...state,
         isLoading: true,
       };
-    case actionTypes.CREATE_INCIDENT_SUCCESS:
+    case actionTypes.CREATE_NEW_INCIDENT_SUCCESS:
       return {
         ...state,
         isLoading: false,
         success: true,
-        newRedflag: action.payload.data,
+        newRedflag: action.payload,
       };
-    case actionTypes.CREATE_INCIDENT_FAILURE:
+    case actionTypes.CREATE_NEW_INCIDENT_FAILURE:
       return {
         ...state,
         isLoading: false,

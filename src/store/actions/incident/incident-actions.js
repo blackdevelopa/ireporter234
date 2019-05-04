@@ -1,30 +1,37 @@
 import * as actionTypes from '../action-types';
 
-export const fetchIncidentStart = () => ({
-  type: actionTypes.FETCH_INCIDENT_START,
+export const fetchAllIncidentStart = () => ({
+  type: actionTypes.FETCH_ALL_INCIDENT_START,
 });
 
-export const fetchIncidentSuccess = payload => ({
-  type: actionTypes.FETCH_INCIDENT_SUCCESS,
+export const fetchAllIncidentSuccess = payload => ({
+  type: `${
+    actionTypes.FETCH_ALL_INCIDENT_SUCCESS
+  }_${payload.type.toUpperCase()}`,
+  payload: payload.data,
+});
+
+export const fetchAllInterventionSuccess = payload => ({
+  type: actionTypes.FETCH_ALL_INTERVENTION_SUCCESS,
   payload,
 });
 
-export const fetchIncidentFailure = payload => ({
-  type: actionTypes.FETCH_INCIDENT_FAILURE,
+export const fetchAllIncidentFailure = payload => ({
+  type: actionTypes.FETCH_ALL_INCIDENT_FAILURE,
   payload,
 });
 
-export const createIncidentStart = () => ({
-  type: actionTypes.CREATE_INCIDENT_START,
+export const createNewIncidentStart = () => ({
+  type: actionTypes.CREATE_NEW_INCIDENT_START,
 });
 
-export const createIncidentSuccess = payload => ({
-  type: actionTypes.CREATE_INCIDENT_SUCCESS,
+export const createNewIncidentSuccess = payload => ({
+  type: actionTypes.CREATE_NEW_INCIDENT_SUCCESS,
   payload,
 });
 
-export const createIncidentFailure = payload => ({
-  type: actionTypes.CREATE_INCIDENT_FAILURE,
+export const createNewIncidentFailure = payload => ({
+  type: actionTypes.CREATE_NEW_INCIDENT_FAILURE,
   payload,
 });
 

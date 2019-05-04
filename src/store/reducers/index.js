@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import login from './authReducers/login';
+import login from './authReducers/auth';
 import error from './errorReducers';
 import register from './authReducers/register';
 import redflag from './incidentReducers/redflag';

@@ -1,4 +1,4 @@
-import * as actionTypes from '../../../actions/action-types';
+import * as actionTypes from '../../actions/action-types';
 import loginReducer from '../login';
 
 const initialState = {

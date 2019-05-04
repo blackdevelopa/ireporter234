@@ -34,7 +34,7 @@ class LoginForm extends Component {
 
   render() {
     return (
-      <Form onSubmit={this.handleSubmit}>
+      <Form onSubmit={this.handleSubmit} id="loginForm">
         <Form.Field
           label="Email Address"
           control={Input}

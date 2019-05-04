@@ -7,12 +7,12 @@ import { withRouter } from 'react-router-dom';
 import { Card } from 'semantic-ui-react';
 import Navbar from '../../navbar/Navbar';
 import SwitchNav from '../../navbar/switchNav/SwitchNav';
-import { fetchSingleRedflagIncident } from '../../../store/actions/incident/redflag';
+import { fetchSingleIncident } from '../../../store/actions/incident/incident';
 import classes from './Incident.css';
 
 class SingleRedFlag extends Component {
   componentDidMount() {
-    this.props.fetchSingleRedflagIncident(this.props.match.params.id);
+    this.props.fetchSingleIncident('red-flags', this.props.match.params.id);
   }
 
   render() {
@@ -42,5 +42,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { fetchSingleRedflagIncident }
+  { fetchSingleIncident }
 )(withRouter(SingleRedFlag));

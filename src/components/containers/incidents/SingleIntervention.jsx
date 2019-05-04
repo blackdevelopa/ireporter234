@@ -12,7 +12,10 @@ import { fetchSingleIncident } from '../../../store/actions/incident/incident';
 
 class SingleIntervention extends Component {
   componentDidMount() {
-    this.props.fetchSingleIncident('intervention', this.props.match.params.id);
+    this.props.fetchSingleIncident(
+      'new-intervention',
+      this.props.match.params.id
+    );
   }
 
   render() {
@@ -37,7 +40,7 @@ class SingleIntervention extends Component {
 }
 
 const mapStateToProps = state => ({
-  SingleIntervention: state.redflag.SingleIntervention,
+  singleIntervention: state.intervention.singleIntervention,
 });
 
 export default connect(
