@@ -1,6 +1,5 @@
 # iReporter Application
 [![Build Status](https://travis-ci.com/blackdevelopa/ireporter234.svg?branch=develop)](https://travis-ci.com/blackdevelopa/ireporter234)
-[![Maintainability](https://api.codeclimate.com/v1/badges/d008d55dd4aef0efd93c/maintainability)](https://codeclimate.com/github/blackdevelopa/ireporter234/maintainability)
 [![Coverage Status](https://coveralls.io/repos/github/blackdevelopa/ireporter234/badge.svg?branch=develop)](https://coveralls.io/github/blackdevelopa/ireporter234?branch=develop)
 
 iReporter is a reporting application for users/citizens to communicate any form of corruption to the notice of the appropriate authorities. Users can also report on things that needs government intervention.
