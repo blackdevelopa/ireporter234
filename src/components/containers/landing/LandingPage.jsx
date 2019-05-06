@@ -1,5 +1,4 @@
 /* eslint-disable react/no-unused-state */
-/* eslint-disable react/destructuring-assignment */
 import React, { Component } from 'react';
 import classes from './LandingPage.css';
 import Navbar from '../../navbar/Navbar';
@@ -13,6 +12,7 @@ class LandingPage extends Component {
   };
 
   render() {
+    const { show } = this.state;
     return (
       <div className={classes.Body}>
         <Navbar name="Get Started" />
@@ -36,7 +36,7 @@ class LandingPage extends Component {
             <div>
               <button
                 type="submit"
-                onClick={this.state.show('blurring')}
+                onClick={show('blurring')}
                 className={classes.Button}
               >
                 <strong>Let us Get started</strong>

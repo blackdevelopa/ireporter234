@@ -4,9 +4,9 @@ import React, { Component } from 'react';
 import { Button, Form, Input } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { registerUser } from '../../../store/actions/auth/register';
+import { registerUser } from '../../../redux/actions/auth/register';
 
-class RegisterForm extends Component {
+export class RegisterForm extends Component {
   state = {
     email: '',
     password: '',
@@ -89,7 +89,7 @@ class RegisterForm extends Component {
 }
 
 const mapStateToProps = state => ({
-  isAuthenticated: state.register.isAuthenticated,
+  isAuthenticated: state.auth.isAuthenticated,
   register: state.register,
 });
 

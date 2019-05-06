@@ -5,9 +5,9 @@ import React, { Component } from 'react';
 import { Button, Form, Input } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { loginUser } from '../../../store/actions/auth/login';
+import { loginUser } from '../../../redux/actions/auth/login';
 
-class LoginForm extends Component {
+export class LoginForm extends Component {
   state = {
     email: '',
     password: '',
@@ -34,7 +34,7 @@ class LoginForm extends Component {
 
   render() {
     return (
-      <Form onSubmit={this.handleSubmit}>
+      <Form onSubmit={this.handleSubmit} id="loginForm">
         <Form.Field
           label="Email Address"
           control={Input}
@@ -61,7 +61,7 @@ class LoginForm extends Component {
 }
 
 const mapStateToProps = state => ({
-  isAuthenticated: state.login.isAuthenticated,
+  isAuthenticated: state.auth.isAuthenticated,
 });
 
 export default connect(

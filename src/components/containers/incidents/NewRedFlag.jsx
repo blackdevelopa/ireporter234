@@ -2,27 +2,13 @@
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable no-unused-vars */
 import React, { Component } from 'react';
-import {
-  Container,
-  Button,
-  Form,
-  Input,
-  TextArea,
-  Select,
-} from 'semantic-ui-react';
-import {
-  Image,
-  Video,
-  Transformation,
-  CloudinaryContext,
-} from 'cloudinary-react';
-
+import { Container, Button, Form, Input, TextArea } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import SwitchNav from '../../navbar/switchNav/SwitchNav';
 import classes from './Incident.css';
 import Navbar from '../../navbar/Navbar';
-import { createIncident } from '../../../store/actions/incident/incident';
+import { createNewIncident } from '../../../redux/actions/incident/incident';
 
 class createNewRedFlag extends Component {
   state = {
@@ -43,7 +29,7 @@ class createNewRedFlag extends Component {
       comment: this.state.comment,
       images: this.state.images,
     };
-    await this.props.createIncident('red-flags', incidentData);
+    await this.props.createNewIncident('red-flags', incidentData);
     if (this.props.newRedflag) {
       this.props.history.push('/red-flags');
     }
@@ -92,10 +78,10 @@ class createNewRedFlag extends Component {
 }
 
 const mapStateToProps = state => ({
-  newRedflag: state.redflag.redflag,
+  newRedflag: state.incident.newIncident,
 });
 
 export default connect(
   mapStateToProps,
-  { createIncident }
+  { createNewIncident }
 )(withRouter(createNewRedFlag));

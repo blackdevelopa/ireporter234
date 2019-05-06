@@ -26,16 +26,45 @@ module.exports = {
           },
         },
       },
+      // {
+      //   test: /\.css$/,
+      //   use: [
+      //     'style-loader',
+      //     {
+      //       loader: 'css-loader',
+      //       options: {
+      //         importLoaders: 1,
+      //         modules: true,
+      //         localIdentName: '[name]__[local]__[hash:base64:5]',
+      //       },
+      //     },
+      //   ],
+      // },
+
       {
         test: /\.css$/,
+        exclude: [/src/],
         use: [
-          'style-loader',
+          require.resolve('style-loader'),
           {
-            loader: 'css-loader',
+            loader: require.resolve('css-loader'),
+            options: {
+              importLoaders: 1,
+            },
+          },
+        ],
+      },
+      {
+        test: /\.css$/,
+        exclude: [/node_modules/],
+        use: [
+          require.resolve('style-loader'),
+          {
+            loader: require.resolve('css-loader'),
             options: {
               importLoaders: 1,
               modules: true,
-              localIdentName: '[name]__[local]__[hash:base64:5]',
+              localIdentName: '[name]__[local]',
             },
           },
         ],
