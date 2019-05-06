@@ -4,9 +4,7 @@ import thunk from 'redux-thunk';
 import { mount } from 'enzyme';
 import { MemoryRouter as Router } from 'react-router-dom';
 import configMockStore from 'redux-mock-store';
-// import { Form, Button } from 'semantic-ui-react';
 import ConnectedLogin, { LoginForm } from './Login';
-// import authReducer from '../../../redux/actions/auth/login';
 
 const props = {
   loginUser: jest.fn(),
@@ -40,8 +38,8 @@ const wrapper = mount(
   </Provider>
 );
 
-describe('<Login> ', () => {
-  it('should render without login component', () => {
+describe('<Login /> ', () => {
+  it('should render without crashing', () => {
     expect(wrapper).toMatchSnapshot();
   });
 

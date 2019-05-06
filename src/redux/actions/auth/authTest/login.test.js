@@ -27,15 +27,15 @@ const mockData = {
   },
 };
 
-describe('login actions', () => {
-  it('should create action for login start', () => {
+describe('loginActions', () => {
+  it('should have an initial state', () => {
     const expectedActions = {
       type: actionTypes.LOGIN_USER_START,
     };
     expect(actions.loginUserStart()).toEqual(expectedActions);
   });
 
-  it('should create action for login success', () => {
+  it('should return an action on login success', () => {
     const expectedActions = {
       type: actionTypes.LOGIN_USER_SUCCESS,
       payload,
@@ -43,7 +43,7 @@ describe('login actions', () => {
     expect(actions.loginUserSuccess(payload)).toEqual(expectedActions);
   });
 
-  it('should create action for login failure', () => {
+  it('should return an error on login failure', () => {
     const expectedActions = {
       type: actionTypes.LOGIN_USER_FAILURE,
       payload,
@@ -53,7 +53,7 @@ describe('login actions', () => {
 });
 
 describe('async', () => {
-  it('should handle login success', async () => {
+  it('should return a dispatch on login success', async () => {
     const store = mockStore({});
     const expectedActions = [
       { type: actionTypes.LOGIN_USER_START },

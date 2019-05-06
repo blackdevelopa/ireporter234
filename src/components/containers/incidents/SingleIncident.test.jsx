@@ -52,12 +52,12 @@ const connectedWrapper = mount(
   </Provider>
 );
 
-describe('<Login> ', () => {
-  it('should render without login component', () => {
+describe('<Login /> ', () => {
+  it('should render without crashing', () => {
     expect(connectedWrapper).toMatchSnapshot();
   });
 
-  it('should render loading when "isLoading is true" ', () => {
+  it('should render loading when "isLoading is true"', () => {
     const interventionWrapper = mount(<SingleIntervention {...props} />);
     const redflagWrapper = mount(<SingleRedFlag {...props} />);
     expect(interventionWrapper.find('.loading')).toHaveLength(1);
