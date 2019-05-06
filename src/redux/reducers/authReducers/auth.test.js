@@ -9,17 +9,17 @@ const initialState = {
   user: null,
 };
 
-describe('auth reducer', () => {
+describe('authReducer', () => {
   const payload = {
     email: 'dh@hm.com',
     password: '12345678',
   };
 
-  it('should return initial state', () => {
+  it('should have an initial state', () => {
     expect(authReducer(initialState, {})).toEqual(initialState);
   });
 
-  it('should update state on login successful', () => {
+  it('should return a user on login success', () => {
     expect(
       authReducer(initialState, {
         type: actionTypes.LOGIN_USER_SUCCESS,
@@ -33,7 +33,7 @@ describe('auth reducer', () => {
     });
   });
 
-  it('should update state on register successful', () => {
+  it('should return a user on register success', () => {
     expect(
       authReducer(initialState, {
         type: actionTypes.REGISTER_USER_SUCCESS,
@@ -47,7 +47,7 @@ describe('auth reducer', () => {
     });
   });
 
-  it('should update state on login failure', () => {
+  it('should return an error on login failure', () => {
     expect(
       authReducer(initialState, {
         type: actionTypes.LOGIN_USER_FAILURE,
@@ -60,7 +60,7 @@ describe('auth reducer', () => {
     });
   });
 
-  it('should update state on register failure', () => {
+  it('should return an error on register failure', () => {
     expect(
       authReducer(initialState, {
         type: actionTypes.REGISTER_USER_FAILURE,
@@ -73,7 +73,7 @@ describe('auth reducer', () => {
     });
   });
 
-  it('should update state on auth error', () => {
+  it('should clear state after auth error', () => {
     expect(
       authReducer(initialState, {
         type: actionTypes.CLEAR_AUTH_ERRORS,

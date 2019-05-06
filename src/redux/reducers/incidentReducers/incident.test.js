@@ -8,7 +8,7 @@ const initialState = {
   incident: {},
 };
 
-describe('incident reducer', () => {
+describe('incidentReducer', () => {
   const payload = [
     {
       location: 'Abuja',
@@ -17,11 +17,11 @@ describe('incident reducer', () => {
     },
   ];
 
-  it('should return initial state', () => {
+  it('should have an initial state', () => {
     expect(incident(initialState, {})).toEqual(initialState);
   });
 
-  it('should update state on fetch all incident successful', () => {
+  it('should return all incident on fetch all success', () => {
     expect(
       incident(initialState, {
         type: actionTypes.FETCH_ALL_INCIDENT_SUCCESS_INTERVENTIONS,
@@ -33,7 +33,7 @@ describe('incident reducer', () => {
     });
   });
 
-  it('should update state on fetch all incident failure', () => {
+  it('should return an error on fetch all failure', () => {
     expect(
       incident(initialState, {
         type: actionTypes.FETCH_ALL_INCIDENT_FAILURE,
@@ -45,7 +45,7 @@ describe('incident reducer', () => {
     });
   });
 
-  it('should update state on fetch single incident success', () => {
+  it('should return single incident on fetch single success', () => {
     expect(
       incident(initialState, {
         type: actionTypes.FETCH_SINGLE_INCIDENT_SUCCESS,
@@ -58,7 +58,7 @@ describe('incident reducer', () => {
     });
   });
 
-  it('should update state on fetch single incident failure', () => {
+  it('should return an error on fetch single failure', () => {
     expect(
       incident(initialState, {
         type: actionTypes.FETCH_SINGLE_INCIDENT_FAILURE,
@@ -70,7 +70,7 @@ describe('incident reducer', () => {
     });
   });
 
-  it('should update state on create new incident successful', () => {
+  it('should create an incident on create new incident success', () => {
     expect(
       incident(initialState, {
         type: actionTypes.CREATE_NEW_INCIDENT_SUCCESS,
@@ -83,7 +83,7 @@ describe('incident reducer', () => {
     });
   });
 
-  it('should update state on create new incident failure', () => {
+  it('should return an error on create new incident failure', () => {
     expect(
       incident(initialState, {
         type: actionTypes.CREATE_NEW_INCIDENT_FAILURE,

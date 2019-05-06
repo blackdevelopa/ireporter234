@@ -18,15 +18,6 @@ const payload = {
   },
 };
 
-// const mockData = {
-//   data: {
-//     data: {
-//       email: faker.internet.userName(),
-//       token: faker.random.number(),
-//     },
-//   },
-// };
-
 const failMockData = {
   errors: {
     response: {
@@ -39,15 +30,15 @@ const failMockData = {
   },
 };
 
-describe('actions', () => {
-  it('should create an action for register user', () => {
+describe('registerActions', () => {
+  it('have an intial state', () => {
     const expectedAction = {
       type: actionTypes.REGISTER_USER_START,
     };
     expect(actions.registerUserStart()).toEqual(expectedAction);
   });
 
-  it('should create an action for register success', () => {
+  it('should return an action on register success', () => {
     const expectedAction = {
       type: actionTypes.REGISTER_USER_SUCCESS,
       payload,
@@ -55,7 +46,7 @@ describe('actions', () => {
     expect(actions.registerUserSuccess(payload)).toEqual(expectedAction);
   });
 
-  it('should create an action for register failure', () => {
+  it('should return an error on register failure', () => {
     const expectedAction = {
       type: actionTypes.REGISTER_USER_FAILURE,
       payload,
@@ -65,7 +56,7 @@ describe('actions', () => {
 });
 
 describe('async', () => {
-  it('should handle register failure', async () => {
+  it('should return an error on register failure', async () => {
     const store = mockStore({});
     const expectedAction = [
       { type: actionTypes.REGISTER_USER_START },
@@ -79,18 +70,4 @@ describe('async', () => {
     await store.dispatch(actions.registerUser());
     expect(store.getActions()).toEqual(expectedAction);
   });
-
-  // it('should handle register success', async () => {
-  //   const store = mockStore({});
-  //   const expectedAction = [
-  //     { type: actionTypes.REGISTER_USER_START },
-  //     { type: actionTypes.REGISTER_USER_SUCCESS, payload: mockData.data.data },
-  //   ];
-
-  //   await axios.post.mockResolvedValue({
-  //     data: { ...mockData, message: 'Signup success' },
-  //   });
-  //   await store.dispatch(actions.registerUser(payload.data));
-  //   expect(store.getActions()).toEqual(expectedAction);
-  // });
 });

@@ -17,7 +17,7 @@ const setup = () => {
   };
 };
 
-describe('Component', () => {
+describe('<Auth />', () => {
   it('should render self and subcomponents', () => {
     const { loginWrapper, registerWrapper } = setup();
     expect(loginWrapper.find('LoginModal').exists()).toBe(true);

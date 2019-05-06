@@ -33,7 +33,7 @@ const connectedWrapper = shallow(
   </Provider>
 );
 
-describe('New Redflag page', () => {
+describe('<NewRedflagPage />', () => {
   it('should render without crashing', () => {
     expect(connectedWrapper).toMatchSnapshot();
   });

@@ -44,15 +44,15 @@ const failMockData = {
   },
 };
 
-describe('create redflag actions', () => {
-  it('should create action for redflag start', () => {
+describe('incidentActions', () => {
+  it('should have an initial state', () => {
     const expectedActions = {
       type: actionTypes.CREATE_NEW_INCIDENT_START,
     };
     expect(actions.createNewIncidentStart()).toEqual(expectedActions);
   });
 
-  it('should create action for redflag success', () => {
+  it('should create an action on create new action success', () => {
     const expectedActions = {
       type: actionTypes.CREATE_NEW_INCIDENT_SUCCESS,
       payload,
@@ -60,7 +60,7 @@ describe('create redflag actions', () => {
     expect(actions.createNewIncidentSuccess(payload)).toEqual(expectedActions);
   });
 
-  it('should create actions for redflag failure', () => {
+  it('should return an error on incident failure', () => {
     const expectedActions = {
       type: actionTypes.CREATE_NEW_INCIDENT_FAILURE,
       payload,
@@ -70,7 +70,7 @@ describe('create redflag actions', () => {
 });
 
 describe('async', () => {
-  it('should handle  create incident success', async () => {
+  it('should return a dispatch on create incident success', async () => {
     const store = mockStore({});
     const expectedActions = [
       { type: actionTypes.CREATE_NEW_INCIDENT_START },
@@ -83,7 +83,8 @@ describe('async', () => {
     await store.dispatch(incident.createNewIncident(payload));
     expect(store.getActions()).toEqual(expectedActions);
   });
-  it('should handle create incident failure', async () => {
+
+  it('should return an error on create incident failure', async () => {
     const store = mockStore({});
     const expectedActions = [
       { type: actionTypes.CREATE_NEW_INCIDENT_START },
@@ -96,7 +97,8 @@ describe('async', () => {
     await store.dispatch(incident.createNewIncident(payload));
     expect(store.getActions()).toEqual(expectedActions);
   });
-  it('should handle fetchAll incident success', async () => {
+
+  it('should return a dispatch on fetch all incident success', async () => {
     const store = mockStore({});
     const expectedActions = [
       { type: actionTypes.FETCH_ALL_INCIDENT_START },
