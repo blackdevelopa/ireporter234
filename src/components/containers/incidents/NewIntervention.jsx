@@ -8,7 +8,7 @@ import { withRouter } from 'react-router-dom';
 import SwitchNav from '../../navbar/switchNav/SwitchNav';
 import classes from './Incident.css';
 import Navbar from '../../navbar/Navbar';
-import { createNewIncident } from '../../../store/actions/incident/incident';
+import { createNewIncident } from '../../../redux/actions/incident/incident';
 
 class createNewIntervention extends Component {
   state = {
@@ -78,7 +78,7 @@ class createNewIntervention extends Component {
 }
 
 const mapStateToProps = state => ({
-  newIntervention: state.intervention.newIntervention,
+  newIntervention: state.incident.newIncident,
 });
 
 export default connect(

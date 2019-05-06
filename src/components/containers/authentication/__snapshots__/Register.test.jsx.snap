@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Register /> rendering should render without 1`] = `ReactWrapper {}`;

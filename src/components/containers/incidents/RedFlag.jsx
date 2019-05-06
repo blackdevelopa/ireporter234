@@ -7,9 +7,9 @@ import { Container, Card } from 'semantic-ui-react';
 import classes from './Incident.css';
 import Navbar from '../../navbar/Navbar';
 import SwitchNav from '../../navbar/switchNav/SwitchNav';
-import { fetchAllIncident } from '../../../store/actions/incident/incident';
+import { fetchAllIncident } from '../../../redux/actions/incident/incident';
 
-class Redflag extends Component {
+export class Redflag extends Component {
   componentDidMount() {
     this.props.fetchAllIncident('red-flags');
   }
@@ -28,9 +28,7 @@ class Redflag extends Component {
         meta: data.createdon.substr(0, 10),
       };
     });
-    console.log(redflagInfo.id);
     return (
-      // console.log(this.props.redflag);
       <div className={classes.main}>
         <Navbar name="Profile" />
         <SwitchNav />
@@ -45,7 +43,7 @@ class Redflag extends Component {
 }
 
 const mapStateToProps = state => ({
-  redflag: state.redflag.redflag,
+  redflag: state.incident.incident,
 });
 
 export default connect(

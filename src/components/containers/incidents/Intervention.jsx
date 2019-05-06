@@ -7,7 +7,7 @@ import { Container, Card } from 'semantic-ui-react';
 import classes from './Incident.css';
 import Navbar from '../../navbar/Navbar';
 import SwitchNav from '../../navbar/switchNav/SwitchNav';
-import { fetchAllIncident } from '../../../store/actions/incident/incident';
+import { fetchAllIncident } from '../../../redux/actions/incident/incident';
 
 class Intervention extends Component {
   componentDidMount() {
@@ -48,7 +48,7 @@ class Intervention extends Component {
 }
 
 const mapStateToProps = state => ({
-  intervention: state.intervention.intervention,
+  intervention: state.incident.incident,
 });
 
 export default connect(

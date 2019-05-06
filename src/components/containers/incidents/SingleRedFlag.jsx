@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 /* eslint-disable react/prop-types */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/prefer-stateless-function */
@@ -7,16 +8,26 @@ import { withRouter } from 'react-router-dom';
 import { Card } from 'semantic-ui-react';
 import Navbar from '../../navbar/Navbar';
 import SwitchNav from '../../navbar/switchNav/SwitchNav';
-import { fetchSingleIncident } from '../../../store/actions/incident/incident';
+import { fetchSingleIncident } from '../../../redux/actions/incident/incident';
 import classes from './Incident.css';
 
-class SingleRedFlag extends Component {
+export class SingleRedFlag extends Component {
   componentDidMount() {
     this.props.fetchSingleIncident('red-flags', this.props.match.params.id);
   }
 
   render() {
-    const { singleRedflag } = this.props;
+    const { singleRedflag, isLoading } = this.props;
+    if (isLoading) {
+      return <div className="loading">Loading...</div>;
+    }
+    if (!singleRedflag.id) {
+      return (
+        <div className="no-incidents">
+          You do not have any incident. Click to create one
+        </div>
+      );
+    }
     const redflagInfo = {
       image: singleRedflag.images,
       header: singleRedflag.location,
@@ -37,7 +48,7 @@ class SingleRedFlag extends Component {
 }
 
 const mapStateToProps = state => ({
-  singleRedflag: state.redflag.singleRedflag,
+  singleRedflag: state.incident.singleIncident,
 });
 
 export default connect(

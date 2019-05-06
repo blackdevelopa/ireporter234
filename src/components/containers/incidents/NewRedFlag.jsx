@@ -3,13 +3,12 @@
 /* eslint-disable no-unused-vars */
 import React, { Component } from 'react';
 import { Container, Button, Form, Input, TextArea } from 'semantic-ui-react';
-
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import SwitchNav from '../../navbar/switchNav/SwitchNav';
 import classes from './Incident.css';
 import Navbar from '../../navbar/Navbar';
-import { createNewIncident } from '../../../store/actions/incident/incident';
+import { createNewIncident } from '../../../redux/actions/incident/incident';
 
 class createNewRedFlag extends Component {
   state = {
@@ -30,7 +29,7 @@ class createNewRedFlag extends Component {
       comment: this.state.comment,
       images: this.state.images,
     };
-    await this.props.createNewIncident('new-red-flag', incidentData);
+    await this.props.createNewIncident('red-flags', incidentData);
     if (this.props.newRedflag) {
       this.props.history.push('/red-flags');
     }
@@ -79,7 +78,7 @@ class createNewRedFlag extends Component {
 }
 
 const mapStateToProps = state => ({
-  newRedflag: state.redflag.newredflag,
+  newRedflag: state.incident.newIncident,
 });
 
 export default connect(

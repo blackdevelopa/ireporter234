@@ -8,18 +8,25 @@ import { Card } from 'semantic-ui-react';
 import Navbar from '../../navbar/Navbar';
 import SwitchNav from '../../navbar/switchNav/SwitchNav';
 import classes from './Incident.css';
-import { fetchSingleIncident } from '../../../store/actions/incident/incident';
+import { fetchSingleIncident } from '../../../redux/actions/incident/incident';
 
-class SingleIntervention extends Component {
+export class SingleIntervention extends Component {
   componentDidMount() {
-    this.props.fetchSingleIncident(
-      'new-intervention',
-      this.props.match.params.id
-    );
+    this.props.fetchSingleIncident('interventions', this.props.match.params.id);
   }
 
   render() {
-    const { singleIntervention } = this.props;
+    const { singleIntervention, isLoading } = this.props;
+    if (isLoading) {
+      return <div className="loading">Loading...</div>;
+    }
+    if (!singleIntervention.id) {
+      return (
+        <div className="no-incidents">
+          You do not have any incident. Click to create one
+        </div>
+      );
+    }
     const interventionInfo = {
       image: singleIntervention.images,
       header: singleIntervention.location,
@@ -40,7 +47,8 @@ class SingleIntervention extends Component {
 }
 
 const mapStateToProps = state => ({
-  singleIntervention: state.intervention.singleIntervention,
+  singleIntervention: state.incident.singleIncident,
+  isLoading: state.incident.isLoading,
 });
 
 export default connect(

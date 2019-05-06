@@ -14,11 +14,11 @@ const Routes = () => {
     <Switch>
       <Route path="/" component={LandingPage} exact />
       <Route path="/red-flags/" component={RedFlag} exact />
-      <Route path="/interventions" component={Intervention} />
+      <Route path="/interventions" component={Intervention} exact />
       <Route path="/new-red-flag" component={NewRedflag} exact />
-      <Route path="/new-intervention" component={NewIntervention} />
-      <Route path="/red-flags/:id?" component={SingleRedFlag} />
-      <Route path="/intervention/:id?" component={SingleIntervention} />
+      <Route path="/new-intervention" component={NewIntervention} exact />
+      <Route path="/red-flags/:id" component={SingleRedFlag} />
+      <Route path="/interventions/:id" component={SingleIntervention} />
       <Route component={Notfound} />
     </Switch>
   );

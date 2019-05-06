@@ -4,7 +4,6 @@
 /* eslint-disable react/destructuring-assignment */
 import React, { Component } from 'react';
 import { Button, Modal } from 'semantic-ui-react';
-import PropTypes from 'prop-types';
 import Login from '../containers/authentication/Login';
 import Register from '../containers/authentication/Register';
 
@@ -46,13 +45,5 @@ class AuthModal extends Component {
     );
   }
 }
-
-Modal.propTypes = {
-  modalState: PropTypes.shape({
-    open: PropTypes.shape().isRequired,
-    close: PropTypes.shape().isRequired,
-    dimmer: PropTypes.shape().isRequired,
-  }).isRequired,
-};
 
 export default AuthModal;
