@@ -15,3 +15,14 @@
 .Content {
   margin-top: 40px;
 }
+
+.navbar {
+  float: right;
+}
+
+.noincidents {
+  font-size: 24px;
+  text-align: center;
+  padding: 24px;
+}
+

@@ -3,7 +3,7 @@ import Navbar from '../../navbar/Navbar';
 
 const Notfound = () => (
   <div>
-    <Navbar />
+    <Navbar firstbtn="Redflag" secondbtn="Intervention" access="true" />
     <h1
       style={{
         textAlign: 'center',

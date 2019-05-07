@@ -1,11 +1,10 @@
-/* eslint-disable no-unused-expressions */
-/* eslint-disable react/prop-types */
-/* eslint-disable react/destructuring-assignment */
-/* eslint-disable react/prefer-stateless-function */
+/* eslint-disable react/require-default-props */
+/* eslint-disable no-shadow */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
-import { Card } from 'semantic-ui-react';
+import { Card, Container } from 'semantic-ui-react';
 import Navbar from '../../navbar/Navbar';
 import SwitchNav from '../../navbar/switchNav/SwitchNav';
 import { fetchSingleIncident } from '../../../redux/actions/incident/incident';
@@ -13,8 +12,26 @@ import classes from './Incident.css';
 
 export class SingleRedFlag extends Component {
   componentDidMount() {
-    this.props.fetchSingleIncident('red-flags', this.props.match.params.id);
+    const {
+      fetchSingleIncident,
+      match: {
+        params: { id },
+      },
+    } = this.props;
+    fetchSingleIncident('red-flags', id);
   }
+
+  secondbtnclick = e => {
+    e.preventDefault();
+    const { history } = this.props;
+    history.push('/red-flags');
+  };
+
+  firstbtnclick = e => {
+    e.preventDefault();
+    const { history } = this.props;
+    history.push('/new-red-flag');
+  };
 
   render() {
     const { singleRedflag, isLoading } = this.props;
@@ -33,19 +50,41 @@ export class SingleRedFlag extends Component {
       header: singleRedflag.location,
       extra: singleRedflag.status,
       description: singleRedflag.comment,
-      meta: singleRedflag.createdon,
+      meta: singleRedflag.createdon.substr(0, 10),
     };
     return (
       <div>
-        <Navbar />
+        <Navbar
+          firstbtnclick={this.firstbtnclick}
+          secondbtnclick={this.secondbtnclick}
+          firstbtn="Add New Redflag"
+          secondbtn="Redflag"
+          access="true"
+        />
         <SwitchNav />
         <div className={classes.Group}>
-          <Card centered {...redflagInfo} />
+          <Container>
+            <Card fluid {...redflagInfo} />
+          </Container>
         </div>
       </div>
     );
   }
 }
+
+SingleRedFlag.propTypes = {
+  fetchSingleIncident: PropTypes.func.isRequired,
+  singleRedflag: PropTypes.shape({}),
+  isLoading: PropTypes.bool,
+  history: PropTypes.shape({
+    push: PropTypes.func,
+  }),
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      id: PropTypes.number,
+    }).isRequired,
+  }).isRequired,
+};
 
 const mapStateToProps = state => ({
   singleRedflag: state.incident.singleIncident,

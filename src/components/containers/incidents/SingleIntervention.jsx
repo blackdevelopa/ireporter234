@@ -1,10 +1,10 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable react/destructuring-assignment */
-/* eslint-disable react/prefer-stateless-function */
+/* eslint-disable react/require-default-props */
+/* eslint-disable no-shadow */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { Card } from 'semantic-ui-react';
+import { Card, Container } from 'semantic-ui-react';
+import PropTypes from 'prop-types';
 import Navbar from '../../navbar/Navbar';
 import SwitchNav from '../../navbar/switchNav/SwitchNav';
 import classes from './Incident.css';
@@ -12,8 +12,26 @@ import { fetchSingleIncident } from '../../../redux/actions/incident/incident';
 
 export class SingleIntervention extends Component {
   componentDidMount() {
-    this.props.fetchSingleIncident('interventions', this.props.match.params.id);
+    const {
+      fetchSingleIncident,
+      match: {
+        params: { id },
+      },
+    } = this.props;
+    fetchSingleIncident('interventions', id);
   }
+
+  secondbtnclick = e => {
+    e.preventDefault();
+    const { history } = this.props;
+    history.push('/interventions');
+  };
+
+  firstbtnclick = e => {
+    e.preventDefault();
+    const { history } = this.props;
+    history.push('/new-intervention');
+  };
 
   render() {
     const { singleIntervention, isLoading } = this.props;
@@ -22,8 +40,8 @@ export class SingleIntervention extends Component {
     }
     if (!singleIntervention.id) {
       return (
-        <div className="no-incidents">
-          You do not have any incident. Click to create one
+        <div>
+          <h1 className={classes.noincidents}>There is no incident here</h1>
         </div>
       );
     }
@@ -32,19 +50,41 @@ export class SingleIntervention extends Component {
       header: singleIntervention.location,
       extra: singleIntervention.status,
       description: singleIntervention.comment,
-      meta: singleIntervention.createdon,
+      meta: singleIntervention.createdon.substr(0, 10),
     };
     return (
       <div>
-        <Navbar />
+        <Navbar
+          firstbtnclick={this.firstbtnclick}
+          secondbtnclick={this.secondbtnclick}
+          firstbtn="Add New Intervention"
+          secondbtn="Intervention"
+          access="true"
+        />
         <SwitchNav />
         <div className={classes.Group}>
-          <Card centered {...interventionInfo} />
+          <Container>
+            <Card fluid {...interventionInfo} />
+          </Container>
         </div>
       </div>
     );
   }
 }
+
+SingleIntervention.propTypes = {
+  fetchSingleIncident: PropTypes.func.isRequired,
+  singleIntervention: PropTypes.shape({}),
+  isLoading: PropTypes.bool,
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      id: PropTypes.number,
+    }),
+  }).isRequired,
+  history: PropTypes.shape({
+    push: PropTypes.func,
+  }),
+};
 
 const mapStateToProps = state => ({
   singleIntervention: state.incident.singleIncident,

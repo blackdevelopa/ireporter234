@@ -1,8 +1,10 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable react/destructuring-assignment */
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/require-default-props */
+/* eslint-disable no-shadow */
 import React, { Component } from 'react';
 import { Button, Form, Input } from 'semantic-ui-react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import { registerUser } from '../../../redux/actions/auth/register';
 
@@ -15,8 +17,9 @@ export class RegisterForm extends Component {
   };
 
   componentDidUpdate() {
-    if (this.props.isAuthenticated) {
-      this.props.history.push('/red-flags');
+    const { isAuthenticated, history } = this.props;
+    if (isAuthenticated) {
+      history.push('/red-flags');
     }
   }
 
@@ -25,17 +28,20 @@ export class RegisterForm extends Component {
   };
 
   handleSubmit = () => {
+    const { email, password, firstname, username } = this.state;
+    const { registerUser } = this.props;
     const userData = {
-      email: this.state.email,
-      password: this.state.password,
-      firstname: this.state.firstname,
-      username: this.state.username,
+      email,
+      password,
+      firstname,
+      username,
     };
 
-    this.props.registerUser(userData);
+    registerUser(userData);
   };
 
   render() {
+    const { name, email, password } = this.state;
     return (
       <Form onSubmit={this.handleSubmit}>
         <Form.Field
@@ -45,7 +51,7 @@ export class RegisterForm extends Component {
           placeholder="full name"
           onChange={this.onChange}
           name="firstname"
-          value={this.state.name}
+          value={name}
         />
         <Form.Field
           label="Userame"
@@ -54,7 +60,7 @@ export class RegisterForm extends Component {
           onChange={this.onChange}
           name="username"
           required
-          value={this.state.name}
+          value={name}
         />
         <Form.Field
           label="Email Address"
@@ -64,22 +70,23 @@ export class RegisterForm extends Component {
           name="email"
           required
           type="email"
-          value={this.state.email}
+          value={email}
         />
         <Form.Field
           label="Password"
+          input="Password"
           control={Input}
           placeholder="secret"
           onChange={this.onChange}
           name="password"
           minLength="6"
           required
-          value={this.state.password}
+          value={password}
         />
         <Form.Field
           control={Button}
           type="submit"
-          style={{ background: 'grey', color: 'white' }}
+          style={{ background: 'green', color: 'white' }}
         >
           Register
         </Form.Field>
@@ -87,6 +94,12 @@ export class RegisterForm extends Component {
     );
   }
 }
+
+RegisterForm.propTypes = {
+  isAuthenticated: PropTypes.bool,
+  history: PropTypes.shape({}),
+  registerUser: PropTypes.func,
+};
 
 const mapStateToProps = state => ({
   isAuthenticated: state.auth.isAuthenticated,

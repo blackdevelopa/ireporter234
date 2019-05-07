@@ -15,23 +15,22 @@ class LandingPage extends Component {
     const { show } = this.state;
     return (
       <div className={classes.Body}>
-        <Navbar name="Get Started" />
+        <Navbar
+          secondbtn="Get Started"
+          secondbtnclick={show('blurring')}
+          access="false"
+        />
         <Login modalState={this.state} />
         <div className={classes.Container}>
           <div className={classes.Card}>
             <div className={classes.Card_content}>
-              <h4 className={classes.Card_text}>
-                Corruption has eaten deep into our country. It is now our
-                responsibility to report all incidence of corruption, as well
-                any situation that requires our government intervention.
-              </h4>
-              <br />
-              <p className={classes.Card_text}>
+              <h1 className={classes.Card_text}>
                 <strong>
                   Pledge to make Nigeria better by reporting events in your
                   location.
                 </strong>
-              </p>
+              </h1>
+              <br />
             </div>
             <div>
               <button

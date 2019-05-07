@@ -1,9 +1,7 @@
-/* eslint-disable react/jsx-filename-extension */
-/* eslint-disable react/prop-types */
-/* eslint-disable react/no-access-state-in-setstate */
-/* eslint-disable react/destructuring-assignment */
+/* eslint-disable react/require-default-props */
 import React, { Component } from 'react';
 import { Button, Modal } from 'semantic-ui-react';
+import PropTypes from 'prop-types';
 import Login from '../containers/authentication/Login';
 import Register from '../containers/authentication/Register';
 
@@ -13,7 +11,8 @@ class AuthModal extends Component {
   };
 
   toggleButton = () => {
-    this.setState({ login: !this.state.login });
+    const { login } = this.state;
+    this.setState({ login: !login });
   };
 
   render() {
@@ -34,8 +33,8 @@ class AuthModal extends Component {
           </Modal.Content>
           <Modal.Actions
             actions={[
-              <Button color="black" key="">
-                {login ? ['Switch to Signup'] : ['Switch to Login']}
+              <Button color="red" key="">
+                {login ? ['Click here to Signup'] : ['Click here to Login']}
               </Button>,
             ]}
             onClick={this.toggleButton}
@@ -45,5 +44,12 @@ class AuthModal extends Component {
     );
   }
 }
+
+AuthModal.propTypes = {
+  modalState: PropTypes.shape({
+    close: PropTypes.shape(),
+    dimmer: PropTypes.shape(),
+  }),
+};
 
 export default AuthModal;

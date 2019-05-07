@@ -1,9 +1,9 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable react/destructuring-assignment */
-/* eslint-disable no-unused-vars */
+/* eslint-disable react/forbid-prop-types */
+/* eslint-disable no-shadow */
 import React, { Component } from 'react';
 import { Container, Button, Form, Input, TextArea } from 'semantic-ui-react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import SwitchNav from '../../navbar/switchNav/SwitchNav';
 import classes from './Incident.css';
@@ -23,22 +23,42 @@ class createNewIntervention extends Component {
   };
 
   handleSubmit = async e => {
+    const { location, comment, images } = this.state;
+    const { newIntervention, createNewIncident, history } = this.props;
     e.preventDefault();
     const incidentData = {
-      location: this.state.location,
-      comment: this.state.comment,
-      images: this.state.images,
+      location,
+      comment,
+      images,
     };
-    await this.props.createNewIncident('interventions', incidentData);
-    if (this.props.newIntervention) {
-      this.props.history.push('/interventions');
+    await createNewIncident('interventions', incidentData);
+    if (newIntervention) {
+      history.push('/interventions');
     }
+  };
+
+  firstbtnclick = e => {
+    e.preventDefault();
+    const { history } = this.props;
+    history.push('/red-flags');
+  };
+
+  secondbtnclick = e => {
+    e.preventDefault();
+    const { history } = this.props;
+    history.push('/interventions');
   };
 
   render() {
     return (
       <div>
-        <Navbar />
+        <Navbar
+          firstbtnclick={this.firstbtnclick}
+          secondbtnclick={this.secondbtnclick}
+          firstbtn="Redflag"
+          secondbtn="Intervention"
+          access="true"
+        />
         <SwitchNav />
         <Container className={classes.Content}>
           <Form onSubmit={this.handleSubmit}>
@@ -76,6 +96,14 @@ class createNewIntervention extends Component {
     );
   }
 }
+
+createNewIntervention.propTypes = {
+  newIntervention: PropTypes.bool.isRequired,
+  createNewIncident: PropTypes.func.isRequired,
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired,
+  }).isRequired,
+};
 
 const mapStateToProps = state => ({
   newIntervention: state.incident.newIncident,

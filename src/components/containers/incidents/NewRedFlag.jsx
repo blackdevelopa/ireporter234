@@ -1,10 +1,9 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable react/destructuring-assignment */
-/* eslint-disable no-unused-vars */
+/* eslint-disable no-shadow */
 import React, { Component } from 'react';
 import { Container, Button, Form, Input, TextArea } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import SwitchNav from '../../navbar/switchNav/SwitchNav';
 import classes from './Incident.css';
 import Navbar from '../../navbar/Navbar';
@@ -17,28 +16,48 @@ class createNewRedFlag extends Component {
     comment: '',
   };
 
+  firstbtnclick = e => {
+    e.preventDefault();
+    const { history } = this.props;
+    history.push('/red-flags');
+  };
+
+  secondbtnclick = e => {
+    e.preventDefault();
+    const { history } = this.props;
+    history.push('/interventions');
+  };
+
   handleInputChange = e => {
     const { value, name } = e.target;
     this.setState({ [name]: value });
   };
 
   handleSubmit = async e => {
+    const { location, comment, images } = this.state;
+    const { createNewIncident, newRedflag, history } = this.props;
     e.preventDefault();
     const incidentData = {
-      location: this.state.location,
-      comment: this.state.comment,
-      images: this.state.images,
+      location,
+      comment,
+      images,
     };
-    await this.props.createNewIncident('red-flags', incidentData);
-    if (this.props.newRedflag) {
-      this.props.history.push('/red-flags');
+    await createNewIncident('red-flags', incidentData);
+    if (newRedflag) {
+      history.push('/red-flags');
     }
   };
 
   render() {
     return (
       <div>
-        <Navbar />
+        <Navbar
+          firstbtnclick={this.firstbtnclick}
+          secondbtnclick={this.secondbtnclick}
+          firstbtn="Redflag"
+          secondbtn="Intervention"
+          access="true"
+        />
         <SwitchNav />
         <Container className={classes.Content}>
           <Form onSubmit={this.handleSubmit}>
@@ -76,6 +95,14 @@ class createNewRedFlag extends Component {
     );
   }
 }
+
+createNewRedFlag.propTypes = {
+  createNewIncident: PropTypes.func.isRequired,
+  newRedflag: PropTypes.bool.isRequired,
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired,
+  }).isRequired,
+};
 
 const mapStateToProps = state => ({
   newRedflag: state.incident.newIncident,

@@ -1,9 +1,10 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable react/destructuring-assignment */
-/* eslint-disable require-jsdoc */
+/* eslint-disable react/require-default-props */
+/* eslint-disable no-shadow */
+/* eslint-disable no-unused-vars */
 import React, { Component } from 'react';
 import { Button, Form, Input } from 'semantic-ui-react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import { loginUser } from '../../../redux/actions/auth/login';
 
@@ -14,8 +15,9 @@ export class LoginForm extends Component {
   };
 
   componentDidUpdate() {
-    if (this.props.isAuthenticated) {
-      this.props.history.push('/red-flags');
+    const { isAuthenticated, history } = this.props;
+    if (isAuthenticated) {
+      history.push('/red-flags');
     }
   }
 
@@ -24,12 +26,14 @@ export class LoginForm extends Component {
   };
 
   handleSubmit = () => {
+    const { email, password } = this.state;
+    const { loginUser } = this.props;
     const userData = {
-      email: this.state.email,
-      password: this.state.password,
+      email,
+      password,
     };
 
-    this.props.loginUser(userData);
+    loginUser(userData);
   };
 
   render() {
@@ -46,19 +50,26 @@ export class LoginForm extends Component {
         />
         <Form.Field
           label="Password"
+          input="Password"
           control={Input}
           placeholder="secret"
           required
           onChange={this.onChange}
           name="password"
         />
-        <Button type="submit" style={{ background: 'grey', color: 'white' }}>
+        <Button type="submit" style={{ background: 'green', color: 'white' }}>
           Login
         </Button>
       </Form>
     );
   }
 }
+
+LoginForm.propTypes = {
+  isAuthenticated: PropTypes.bool,
+  history: PropTypes.shape({}),
+  loginUser: PropTypes.func,
+};
 
 const mapStateToProps = state => ({
   isAuthenticated: state.auth.isAuthenticated,

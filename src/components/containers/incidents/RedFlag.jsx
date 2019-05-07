@@ -1,46 +1,63 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable react/destructuring-assignment */
+/* eslint-disable react/forbid-prop-types */
+/* eslint-disable no-shadow */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import { Container, Card } from 'semantic-ui-react';
 import classes from './Incident.css';
 import Navbar from '../../navbar/Navbar';
 import SwitchNav from '../../navbar/switchNav/SwitchNav';
 import { fetchAllIncident } from '../../../redux/actions/incident/incident';
+import ViewCard from './viewSingleIncident';
 
 export class Redflag extends Component {
   componentDidMount() {
-    this.props.fetchAllIncident('red-flags');
+    const { fetchAllIncident } = this.props;
+    fetchAllIncident('red-flags');
   }
 
+  firstbtnclick = e => {
+    e.preventDefault();
+    const { history } = this.props;
+    history.push('/new-red-flag');
+  };
+
+  secondbtnclick = e => {
+    e.preventDefault();
+    const { history } = this.props;
+    history.push('/interventions');
+  };
+
   render() {
-    const redflagInfo = this.props.redflag.map(data => {
-      const descriptionText = (
-        <div className={classes.Ellipsis}>{data.comment}</div>
-      );
-      return {
-        key: data.id,
-        image: data.images,
-        header: data.location,
-        extra: data.status,
-        description: descriptionText,
-        meta: data.createdon.substr(0, 10),
-      };
-    });
+    const { redflag } = this.props;
     return (
       <div className={classes.main}>
-        <Navbar name="Profile" />
+        <Navbar
+          firstbtnclick={this.firstbtnclick}
+          secondbtnclick={this.secondbtnclick}
+          firstbtn="Add New Redflag"
+          secondbtn="Intervention"
+          access="true"
+        />
         <SwitchNav />
         <div className={classes.Group}>
           <Container>
-            <Card.Group items={redflagInfo} centered />
+            <Card.Group centered>
+              <ViewCard data={redflag} type="red-flags" />
+            </Card.Group>
           </Container>
         </div>
       </div>
     );
   }
 }
+
+Redflag.propTypes = {
+  fetchAllIncident: PropTypes.func.isRequired,
+  redflag: PropTypes.array.isRequired,
+  history: PropTypes.shape({}).isRequired,
+};
 
 const mapStateToProps = state => ({
   redflag: state.incident.incident,
