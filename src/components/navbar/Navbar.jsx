@@ -17,6 +17,7 @@ const Navbar = props => {
         {access === 'true' && (
           <Button
             size="medium"
+            compact
             color="blue"
             onClick={firstbtnclick}
             className={classes.button}
@@ -24,9 +25,10 @@ const Navbar = props => {
             {firstbtn}
           </Button>
         )}
-
+        {''}
         <Button
           size="medium"
+          compact
           onClick={secondbtnclick}
           color="green"
           className={classes.button}

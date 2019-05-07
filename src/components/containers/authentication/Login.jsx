@@ -2,12 +2,19 @@
 /* eslint-disable no-shadow */
 /* eslint-disable no-unused-vars */
 import React, { Component } from 'react';
+import { css } from '@emotion/core';
+import { ClipLoader } from 'react-spinners';
 import { Button, Form, Input } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import { loginUser } from '../../../redux/actions/auth/login';
 
+const override = css`
+  display: block;
+  margin: 0 auto;
+  border-color: red;
+`;
 export class LoginForm extends Component {
   state = {
     email: '',
@@ -38,29 +45,32 @@ export class LoginForm extends Component {
 
   render() {
     return (
-      <Form onSubmit={this.handleSubmit} id="loginForm">
-        <Form.Field
-          label="Email Address"
-          control={Input}
-          placeholder="name@email.com"
-          type="email"
-          required
-          onChange={this.onChange}
-          name="email"
-        />
-        <Form.Field
-          label="Password"
-          input="Password"
-          control={Input}
-          placeholder="secret"
-          required
-          onChange={this.onChange}
-          name="password"
-        />
-        <Button type="submit" style={{ background: 'green', color: 'white' }}>
-          Login
-        </Button>
-      </Form>
+      <div className="sweet-loading">
+        <Form onSubmit={this.handleSubmit} id="loginForm">
+          <ClipLoader css={override} sizeUnit="px" size={150} color="#123abc" />
+          <Form.Field
+            label="Email Address"
+            control={Input}
+            placeholder="name@email.com"
+            type="email"
+            required
+            onChange={this.onChange}
+            name="email"
+          />
+          <Form.Field
+            label="Password"
+            input="Password"
+            control={Input}
+            placeholder="secret"
+            required
+            onChange={this.onChange}
+            name="password"
+          />
+          <Button type="submit" style={{ background: 'green', color: 'white' }}>
+            Login
+          </Button>
+        </Form>
+      </div>
     );
   }
 }

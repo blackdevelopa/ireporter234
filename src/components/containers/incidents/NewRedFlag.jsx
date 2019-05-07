@@ -9,7 +9,7 @@ import classes from './Incident.css';
 import Navbar from '../../navbar/Navbar';
 import { createNewIncident } from '../../../redux/actions/incident/incident';
 
-class createNewRedFlag extends Component {
+export class createNewRedFlag extends Component {
   state = {
     location: '',
     images: '',

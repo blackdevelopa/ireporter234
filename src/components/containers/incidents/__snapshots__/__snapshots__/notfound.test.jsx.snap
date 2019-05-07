@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<NotFound > should render without crashing 1`] = `
+<div>
+  <Navbar
+    access="true"
+    firstbtn="Redflag"
+    secondbtn="Intervention"
+  />
+  <h1
+    style={
+      Object {
+        "fontSize": "40px",
+        "textAlign": "center",
+      }
+    }
+  >
+    Sorry. We think a bear ate the page you are looking for.
+  </h1>
+</div>
+`;

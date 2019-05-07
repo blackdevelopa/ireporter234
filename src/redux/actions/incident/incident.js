@@ -37,6 +37,6 @@ export const fetchAllIncident = type => async dispatch => {
       actions.fetchAllIncidentSuccess({ data: response.data.data, type })
     );
   } catch (error) {
-    dispatch(actions.fetchAllIncidentFailure(error));
+    dispatch(actions.fetchAllIncidentFailure({ error }));
   }
 };

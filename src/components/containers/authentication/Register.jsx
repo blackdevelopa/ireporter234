@@ -2,12 +2,19 @@
 /* eslint-disable react/require-default-props */
 /* eslint-disable no-shadow */
 import React, { Component } from 'react';
+import { css } from '@emotion/core';
+import { ClipLoader } from 'react-spinners';
 import { Button, Form, Input } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import { registerUser } from '../../../redux/actions/auth/register';
 
+const override = css`
+  display: block;
+  margin: 0 auto;
+  border-color: red;
+`;
 export class RegisterForm extends Component {
   state = {
     email: '',
@@ -29,7 +36,7 @@ export class RegisterForm extends Component {
 
   handleSubmit = () => {
     const { email, password, firstname, username } = this.state;
-    const { registerUser } = this.props;
+    const { registerUser, isLoading } = this.props;
     const userData = {
       email,
       password,
@@ -44,6 +51,7 @@ export class RegisterForm extends Component {
     const { name, email, password } = this.state;
     return (
       <Form onSubmit={this.handleSubmit}>
+        <ClipLoader css={override} sizeUnit="px" size={150} color="#123abc" />
         <Form.Field
           label="Full Name"
           control={Input}
@@ -97,6 +105,7 @@ export class RegisterForm extends Component {
 
 RegisterForm.propTypes = {
   isAuthenticated: PropTypes.bool,
+  isLoading: PropTypes.bool,
   history: PropTypes.shape({}),
   registerUser: PropTypes.func,
 };

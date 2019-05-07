@@ -1,3 +1,375 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Login />  should render without crashing 1`] = `ReactWrapper {}`;
+exports[`<Login />  should render without crashing 1`] = `
+<Provider
+  context={
+    Object {
+      "$$typeof": Symbol(react.context),
+      "Consumer": Object {
+        "$$typeof": Symbol(react.context),
+        "_calculateChangedBits": null,
+        "_context": [Circular],
+      },
+      "Provider": Object {
+        "$$typeof": Symbol(react.provider),
+        "_context": [Circular],
+      },
+      "_calculateChangedBits": null,
+      "_currentRenderer": Object {},
+      "_currentRenderer2": null,
+      "_currentValue": undefined,
+      "_currentValue2": undefined,
+    }
+  }
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <MemoryRouter>
+    <Router
+      history={
+        Object {
+          "action": "POP",
+          "block": [Function],
+          "canGo": [Function],
+          "createHref": [Function],
+          "entries": Array [
+            Object {
+              "hash": "",
+              "key": "lrplgp",
+              "pathname": "/",
+              "search": "",
+              "state": undefined,
+            },
+          ],
+          "go": [Function],
+          "goBack": [Function],
+          "goForward": [Function],
+          "index": 0,
+          "length": 1,
+          "listen": [Function],
+          "location": Object {
+            "hash": "",
+            "key": "lrplgp",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          },
+          "push": [Function],
+          "replace": [Function],
+        }
+      }
+    >
+      <div>
+        <Connect(withRouter(SingleIntervention))
+          context={
+            Object {
+              "$$typeof": Symbol(react.context),
+              "Consumer": Object {
+                "$$typeof": Symbol(react.context),
+                "_calculateChangedBits": null,
+                "_context": [Circular],
+              },
+              "Provider": Object {
+                "$$typeof": Symbol(react.provider),
+                "_context": [Circular],
+              },
+              "_calculateChangedBits": null,
+              "_currentRenderer": Object {},
+              "_currentRenderer2": null,
+              "_currentValue": undefined,
+              "_currentValue2": undefined,
+            }
+          }
+          fetchSingleIncident={[MockFunction]}
+          interventionInfo={Object {}}
+          isLoading={true}
+          match={
+            Object {
+              "params": Object {
+                "id": 10,
+              },
+            }
+          }
+          singleIntervention={Object {}}
+          singleRedflag={Object {}}
+        >
+          <withRouter(SingleIntervention)
+            context={
+              Object {
+                "$$typeof": Symbol(react.context),
+                "Consumer": Object {
+                  "$$typeof": Symbol(react.context),
+                  "_calculateChangedBits": null,
+                  "_context": [Circular],
+                },
+                "Provider": Object {
+                  "$$typeof": Symbol(react.provider),
+                  "_context": [Circular],
+                },
+                "_calculateChangedBits": null,
+                "_currentRenderer": Object {},
+                "_currentRenderer2": null,
+                "_currentValue": undefined,
+                "_currentValue2": undefined,
+              }
+            }
+            fetchSingleIncident={[Function]}
+            interventionInfo={Object {}}
+            match={
+              Object {
+                "params": Object {
+                  "id": 10,
+                },
+              }
+            }
+            singleIntervention={Object {}}
+            singleRedflag={Object {}}
+          >
+            <Route>
+              <SingleIntervention
+                context={
+                  Object {
+                    "$$typeof": Symbol(react.context),
+                    "Consumer": Object {
+                      "$$typeof": Symbol(react.context),
+                      "_calculateChangedBits": null,
+                      "_context": [Circular],
+                    },
+                    "Provider": Object {
+                      "$$typeof": Symbol(react.provider),
+                      "_context": [Circular],
+                    },
+                    "_calculateChangedBits": null,
+                    "_currentRenderer": Object {},
+                    "_currentRenderer2": null,
+                    "_currentValue": undefined,
+                    "_currentValue2": undefined,
+                  }
+                }
+                fetchSingleIncident={[Function]}
+                history={
+                  Object {
+                    "action": "POP",
+                    "block": [Function],
+                    "canGo": [Function],
+                    "createHref": [Function],
+                    "entries": Array [
+                      Object {
+                        "hash": "",
+                        "key": "lrplgp",
+                        "pathname": "/",
+                        "search": "",
+                        "state": undefined,
+                      },
+                    ],
+                    "go": [Function],
+                    "goBack": [Function],
+                    "goForward": [Function],
+                    "index": 0,
+                    "length": 1,
+                    "listen": [Function],
+                    "location": Object {
+                      "hash": "",
+                      "key": "lrplgp",
+                      "pathname": "/",
+                      "search": "",
+                      "state": undefined,
+                    },
+                    "push": [Function],
+                    "replace": [Function],
+                  }
+                }
+                interventionInfo={Object {}}
+                location={
+                  Object {
+                    "hash": "",
+                    "key": "lrplgp",
+                    "pathname": "/",
+                    "search": "",
+                    "state": undefined,
+                  }
+                }
+                match={
+                  Object {
+                    "isExact": true,
+                    "params": Object {},
+                    "path": "/",
+                    "url": "/",
+                  }
+                }
+                singleIntervention={Object {}}
+                singleRedflag={Object {}}
+              >
+                <div>
+                  <h1>
+                    There is no incident here
+                  </h1>
+                </div>
+              </SingleIntervention>
+            </Route>
+          </withRouter(SingleIntervention)>
+        </Connect(withRouter(SingleIntervention))>
+        <Connect(withRouter(SingleRedFlag))
+          context={
+            Object {
+              "$$typeof": Symbol(react.context),
+              "Consumer": Object {
+                "$$typeof": Symbol(react.context),
+                "_calculateChangedBits": null,
+                "_context": [Circular],
+              },
+              "Provider": Object {
+                "$$typeof": Symbol(react.provider),
+                "_context": [Circular],
+              },
+              "_calculateChangedBits": null,
+              "_currentRenderer": Object {},
+              "_currentRenderer2": null,
+              "_currentValue": undefined,
+              "_currentValue2": undefined,
+            }
+          }
+          fetchSingleIncident={[MockFunction]}
+          interventionInfo={Object {}}
+          isLoading={true}
+          match={
+            Object {
+              "params": Object {
+                "id": 10,
+              },
+            }
+          }
+          singleIntervention={Object {}}
+          singleRedflag={Object {}}
+        >
+          <withRouter(SingleRedFlag)
+            context={
+              Object {
+                "$$typeof": Symbol(react.context),
+                "Consumer": Object {
+                  "$$typeof": Symbol(react.context),
+                  "_calculateChangedBits": null,
+                  "_context": [Circular],
+                },
+                "Provider": Object {
+                  "$$typeof": Symbol(react.provider),
+                  "_context": [Circular],
+                },
+                "_calculateChangedBits": null,
+                "_currentRenderer": Object {},
+                "_currentRenderer2": null,
+                "_currentValue": undefined,
+                "_currentValue2": undefined,
+              }
+            }
+            fetchSingleIncident={[Function]}
+            interventionInfo={Object {}}
+            isLoading={true}
+            match={
+              Object {
+                "params": Object {
+                  "id": 10,
+                },
+              }
+            }
+            singleIntervention={Object {}}
+            singleRedflag={Object {}}
+          >
+            <Route>
+              <SingleRedFlag
+                context={
+                  Object {
+                    "$$typeof": Symbol(react.context),
+                    "Consumer": Object {
+                      "$$typeof": Symbol(react.context),
+                      "_calculateChangedBits": null,
+                      "_context": [Circular],
+                    },
+                    "Provider": Object {
+                      "$$typeof": Symbol(react.provider),
+                      "_context": [Circular],
+                    },
+                    "_calculateChangedBits": null,
+                    "_currentRenderer": Object {},
+                    "_currentRenderer2": null,
+                    "_currentValue": undefined,
+                    "_currentValue2": undefined,
+                  }
+                }
+                fetchSingleIncident={[Function]}
+                history={
+                  Object {
+                    "action": "POP",
+                    "block": [Function],
+                    "canGo": [Function],
+                    "createHref": [Function],
+                    "entries": Array [
+                      Object {
+                        "hash": "",
+                        "key": "lrplgp",
+                        "pathname": "/",
+                        "search": "",
+                        "state": undefined,
+                      },
+                    ],
+                    "go": [Function],
+                    "goBack": [Function],
+                    "goForward": [Function],
+                    "index": 0,
+                    "length": 1,
+                    "listen": [Function],
+                    "location": Object {
+                      "hash": "",
+                      "key": "lrplgp",
+                      "pathname": "/",
+                      "search": "",
+                      "state": undefined,
+                    },
+                    "push": [Function],
+                    "replace": [Function],
+                  }
+                }
+                interventionInfo={Object {}}
+                isLoading={true}
+                location={
+                  Object {
+                    "hash": "",
+                    "key": "lrplgp",
+                    "pathname": "/",
+                    "search": "",
+                    "state": undefined,
+                  }
+                }
+                match={
+                  Object {
+                    "isExact": true,
+                    "params": Object {},
+                    "path": "/",
+                    "url": "/",
+                  }
+                }
+                singleIntervention={Object {}}
+                singleRedflag={Object {}}
+              >
+                <div
+                  className="loading"
+                >
+                  Loading...
+                </div>
+              </SingleRedFlag>
+            </Route>
+          </withRouter(SingleRedFlag)>
+        </Connect(withRouter(SingleRedFlag))>
+      </div>
+    </Router>
+  </MemoryRouter>
+</Provider>
+`;

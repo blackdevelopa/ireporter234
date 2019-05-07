@@ -5,6 +5,9 @@ import { ToastContainer } from 'react-toastify';
 import Routes from '../routes/Routes';
 import store from '../store';
 import 'react-toastify/dist/ReactToastify.css';
+import { loggedIn } from '../../helpers';
+
+loggedIn();
 
 const App = () => {
   return (

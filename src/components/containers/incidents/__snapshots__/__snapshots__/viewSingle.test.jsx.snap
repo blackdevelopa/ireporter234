@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ViewSingle /> should render without crashing 1`] = `
+<Card
+  centered={true}
+  href="/intervention/11"
+  key="11"
+>
+  <Image
+    as="img"
+    src="https://picsum.photos/id/170/200/300"
+    ui={false}
+    wrapped={true}
+  />
+  <CardContent>
+    <CardHeader>
+      Umuahia
+    </CardHeader>
+    <CardMeta>
+      <span
+        className="date"
+      >
+        2019-05-01
+      </span>
+    </CardMeta>
+    <CardDescription>
+      This is a redflag that happened in Umuahia
+    </CardDescription>
+  </CardContent>
+</Card>
+`;

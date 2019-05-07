@@ -20,3 +20,11 @@
 .button {
   float: right;
 }
+
+@media only screen and (max-width: 407px) {
+  .button {
+    float: right;
+    width: 50%;
+    max-width: 50%;  
+  }
+}
