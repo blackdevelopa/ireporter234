@@ -49,9 +49,9 @@ export class RegisterForm extends Component {
 
   render() {
     const { name, email, password } = this.state;
+    const { isLoading } = this.props;
     return (
       <Form onSubmit={this.handleSubmit}>
-        <ClipLoader css={override} sizeUnit="px" size={150} color="#123abc" />
         <Form.Field
           label="Full Name"
           control={Input}
@@ -91,13 +91,13 @@ export class RegisterForm extends Component {
           required
           value={password}
         />
-        <Form.Field
-          control={Button}
-          type="submit"
-          style={{ background: 'green', color: 'white' }}
-        >
-          Register
-        </Form.Field>
+        <Button type="submit" style={{ background: 'green', color: 'white' }}>
+          {!isLoading ? (
+            'Register'
+          ) : (
+            <ClipLoader css={override} sizeUnit="px" size={20} color="#fffff" />
+          )}
+        </Button>
       </Form>
     );
   }

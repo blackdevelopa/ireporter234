@@ -5,9 +5,12 @@ import { ToastContainer } from 'react-toastify';
 import Routes from '../routes/Routes';
 import store from '../store';
 import 'react-toastify/dist/ReactToastify.css';
-import { loggedIn } from '../../helpers';
+import { setCurrentUser } from '../redux/actions/auth/login';
 
-loggedIn();
+if (localStorage.authorization) {
+  const token = localStorage.getItem('authorization');
+  store.dispatch(setCurrentUser(token));
+}
 
 const App = () => {
   return (

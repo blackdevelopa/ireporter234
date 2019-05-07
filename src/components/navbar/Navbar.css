@@ -24,7 +24,7 @@
 @media only screen and (max-width: 407px) {
   .button {
     float: right;
-    width: 50%;
-    max-width: 50%;  
+    width: 30%;
+    font-size: 8px !important;
   }
 }

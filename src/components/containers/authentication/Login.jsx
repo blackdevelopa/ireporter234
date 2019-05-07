@@ -44,10 +44,10 @@ export class LoginForm extends Component {
   };
 
   render() {
+    const { isLoading } = this.props;
     return (
       <div className="sweet-loading">
         <Form onSubmit={this.handleSubmit} id="loginForm">
-          <ClipLoader css={override} sizeUnit="px" size={150} color="#123abc" />
           <Form.Field
             label="Email Address"
             control={Input}
@@ -67,7 +67,16 @@ export class LoginForm extends Component {
             name="password"
           />
           <Button type="submit" style={{ background: 'green', color: 'white' }}>
-            Login
+            {!isLoading ? (
+              'Login'
+            ) : (
+              <ClipLoader
+                css={override}
+                sizeUnit="px"
+                size={20}
+                color="#fffff"
+              />
+            )}
           </Button>
         </Form>
       </div>
@@ -79,10 +88,12 @@ LoginForm.propTypes = {
   isAuthenticated: PropTypes.bool,
   history: PropTypes.shape({}),
   loginUser: PropTypes.func,
+  isLoading: PropTypes.bool,
 };
 
 const mapStateToProps = state => ({
   isAuthenticated: state.auth.isAuthenticated,
+  isLoading: state.auth.isLoading,
 });
 
 export default connect(

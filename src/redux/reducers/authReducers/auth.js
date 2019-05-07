@@ -31,6 +31,13 @@ const authReducer = (state = initialState, action) => {
         isLoading: false,
         error: true,
       };
+    case actionTypes.CURRENT_USER:
+      return {
+        ...state,
+        isAuthenticated: true,
+        isLoading: false,
+        user: action.decoded,
+      };
     default:
       return state;
   }

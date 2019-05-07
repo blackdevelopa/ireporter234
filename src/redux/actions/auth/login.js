@@ -29,3 +29,8 @@ export const loginUser = userData => {
       });
   };
 };
+
+export const setCurrentUser = decoded => ({
+  type: actionTypes.CURRENT_USER,
+  payload: decoded,
+});
