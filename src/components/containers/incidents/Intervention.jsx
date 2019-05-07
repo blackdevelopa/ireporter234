@@ -17,14 +17,12 @@ class Intervention extends Component {
     fetchAllIncident('interventions');
   }
 
-  firstbtnclick = e => {
-    e.preventDefault();
+  firstbtnclick = () => {
     const { history } = this.props;
     history.push('/new-intervention');
   };
 
-  secondbtnclick = e => {
-    e.preventDefault();
+  secondbtnclick = () => {
     const { history } = this.props;
     history.push('/red-flags');
   };

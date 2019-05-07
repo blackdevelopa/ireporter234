@@ -21,14 +21,12 @@ export class SingleIntervention extends Component {
     fetchSingleIncident('interventions', id);
   }
 
-  secondbtnclick = e => {
-    e.preventDefault();
+  secondbtnclick = () => {
     const { history } = this.props;
     history.push('/interventions');
   };
 
-  firstbtnclick = e => {
-    e.preventDefault();
+  firstbtnclick = () => {
     const { history } = this.props;
     history.push('/new-intervention');
   };
@@ -50,7 +48,7 @@ export class SingleIntervention extends Component {
       header: singleIntervention.location,
       extra: singleIntervention.status,
       description: singleIntervention.comment,
-      meta: singleIntervention.createdon.substr(0, 10),
+      meta: singleIntervention.createdon,
     };
     return (
       <div>

@@ -22,10 +22,9 @@ class createNewIntervention extends Component {
     this.setState({ [name]: value });
   };
 
-  handleSubmit = async e => {
+  handleSubmit = async () => {
     const { location, comment, images } = this.state;
     const { newIntervention, createNewIncident, history } = this.props;
-    e.preventDefault();
     const incidentData = {
       location,
       comment,
@@ -37,14 +36,12 @@ class createNewIntervention extends Component {
     }
   };
 
-  firstbtnclick = e => {
-    e.preventDefault();
+  firstbtnclick = () => {
     const { history } = this.props;
     history.push('/red-flags');
   };
 
-  secondbtnclick = e => {
-    e.preventDefault();
+  secondbtnclick = () => {
     const { history } = this.props;
     history.push('/interventions');
   };

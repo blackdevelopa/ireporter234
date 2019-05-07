@@ -16,14 +16,12 @@ class createNewRedFlag extends Component {
     comment: '',
   };
 
-  firstbtnclick = e => {
-    e.preventDefault();
+  firstbtnclick = () => {
     const { history } = this.props;
     history.push('/red-flags');
   };
 
-  secondbtnclick = e => {
-    e.preventDefault();
+  secondbtnclick = () => {
     const { history } = this.props;
     history.push('/interventions');
   };
@@ -33,10 +31,9 @@ class createNewRedFlag extends Component {
     this.setState({ [name]: value });
   };
 
-  handleSubmit = async e => {
+  handleSubmit = async () => {
     const { location, comment, images } = this.state;
     const { createNewIncident, newRedflag, history } = this.props;
-    e.preventDefault();
     const incidentData = {
       location,
       comment,

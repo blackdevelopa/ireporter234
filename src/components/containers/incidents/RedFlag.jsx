@@ -17,14 +17,12 @@ export class Redflag extends Component {
     fetchAllIncident('red-flags');
   }
 
-  firstbtnclick = e => {
-    e.preventDefault();
+  firstbtnclick = () => {
     const { history } = this.props;
     history.push('/new-red-flag');
   };
 
-  secondbtnclick = e => {
-    e.preventDefault();
+  secondbtnclick = () => {
     const { history } = this.props;
     history.push('/interventions');
   };
