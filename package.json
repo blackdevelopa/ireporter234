@@ -8,7 +8,7 @@
     "start": "DEBUG=iReporter234* node server.js",
     "build": "DEBUG=iReporter234*  rm -rf dist && webpack --mode production",
     "lint": "./node_modules/eslint/bin/eslint.js . --ext .js,.jsx",
-    "test": "jest --config=jest.config.js --coverage --colors"
+    "test": "jest --config=jest.config.js --coverage --colors --u"
   },
   "repository": {
     "type": "git",
