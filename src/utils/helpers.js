@@ -8,10 +8,7 @@ export const uploadMedia = async data => {
     formData.append('upload_preset', 'ml_default');
     formData.append('timestamp', Date.now());
 
-    return axios.post(
-      `https://api.cloudinary.com/v1_1/davpuub5m/upload`,
-      formData
-    );
+    return axios.post(`${process.env.CLOUDINARY_API}`, formData);
   });
   const uploadResponse = uploads.length ? await axios.all(uploads) : [];
   const media = uploadResponse.map(m => ({
