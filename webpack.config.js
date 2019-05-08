@@ -73,6 +73,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './public/index.html',
     }),
-    new webpack.EnvironmentPlugin(['NODE_ENV', 'baseURL']),
+    new webpack.EnvironmentPlugin(['NODE_ENV', 'baseURL', 'CLOUDINARY_API']),
   ],
 };
