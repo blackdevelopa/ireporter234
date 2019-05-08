@@ -9,7 +9,7 @@ import classes from './Incident.css';
 import Navbar from '../../navbar/Navbar';
 import SwitchNav from '../../navbar/switchNav/SwitchNav';
 import { fetchAllIncident } from '../../../redux/actions/incident/incident';
-import ViewCard from './ViewSingleIncident';
+import ViewCard from './SingleIncidentView';
 
 export class Redflag extends Component {
   componentDidMount() {
