@@ -1,3 +1,4 @@
+/* eslint-disable react/require-default-props */
 /* eslint-disable no-shadow */
 import React, { Component } from 'react';
 import { Container, Button, Form, Input, TextArea } from 'semantic-ui-react';
@@ -102,11 +103,11 @@ export class createNewRedFlag extends Component {
 }
 
 createNewRedFlag.propTypes = {
-  createNewIncident: PropTypes.func.isRequired,
-  newRedflag: PropTypes.bool.isRequired,
+  createNewIncident: PropTypes.func,
+  newRedflag: PropTypes.bool,
   history: PropTypes.shape({
-    push: PropTypes.func.isRequired,
-  }).isRequired,
+    push: PropTypes.func,
+  }),
 };
 
 const mapStateToProps = state => ({
