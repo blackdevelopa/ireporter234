@@ -46,3 +46,31 @@ export const fetchSingleIncidentFailure = payload => ({
   type: actionTypes.FETCH_SINGLE_INCIDENT_FAILURE,
   payload,
 });
+
+export const editIncidentStart = () => ({
+  type: actionTypes.EDIT_INCIDENT_START,
+});
+
+export const editIncidentSuccess = payload => ({
+  type: actionTypes.EDIT_INCIDENT_SUCCESS,
+  payload,
+});
+
+export const editIncidentFailure = payload => ({
+  type: actionTypes.EDIT_INCIDENT_FAILURE,
+  payload,
+});
+
+export const deleteIncidentStart = () => ({
+  type: actionTypes.DELETE_INCIDENT_START,
+});
+
+export const deleteIncidentSuccess = payload => ({
+  type: actionTypes.DELETE_INCIDENT_SUCCESS,
+  payload,
+});
+
+export const deleteIncidentFailure = payload => ({
+  type: actionTypes.DELETE_INCIDENT_FAILURE,
+  payload,
+});

@@ -1,6 +1,5 @@
 /* eslint-disable react/require-default-props */
 /* eslint-disable no-shadow */
-/* eslint-disable no-unused-vars */
 import React, { Component } from 'react';
 import { css } from '@emotion/core';
 import { ClipLoader } from 'react-spinners';

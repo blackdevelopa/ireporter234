@@ -12,7 +12,7 @@ import { createNewIncident } from '../../../redux/actions/incident/incident';
 export class createNewRedFlag extends Component {
   state = {
     location: '',
-    images: '',
+    images: [],
     comment: '',
   };
 
@@ -29,6 +29,11 @@ export class createNewRedFlag extends Component {
   handleInputChange = e => {
     const { value, name } = e.target;
     this.setState({ [name]: value });
+  };
+
+  handleInputFileChange = e => {
+    const { files, name } = e.target;
+    this.setState({ [name]: files });
   };
 
   handleSubmit = async () => {
@@ -68,12 +73,15 @@ export class createNewRedFlag extends Component {
                 required
               />
             </Form.Group>
-            <Form.Field
-              control={Input}
+            <Form.Input
+              iconPosition="left"
+              type="file"
               label="Upload image"
+              onChange={this.handleInputFileChange}
               name="images"
-              onChange={this.handleInputChange}
-              placeholder="click to upload"
+              transparent
+              multiple
+              accept="image/*"
             />
             <Form.Field
               control={TextArea}

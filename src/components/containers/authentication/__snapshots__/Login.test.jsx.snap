@@ -43,7 +43,7 @@ exports[`<Login />  should render without crashing 1`] = `
           "entries": Array [
             Object {
               "hash": "",
-              "key": "81d863",
+              "key": "2dio25",
               "pathname": "/",
               "search": "",
               "state": undefined,
@@ -57,7 +57,7 @@ exports[`<Login />  should render without crashing 1`] = `
           "listen": [Function],
           "location": Object {
             "hash": "",
-            "key": "81d863",
+            "key": "2dio25",
             "pathname": "/",
             "search": "",
             "state": undefined,
@@ -141,7 +141,7 @@ exports[`<Login />  should render without crashing 1`] = `
                   "entries": Array [
                     Object {
                       "hash": "",
-                      "key": "81d863",
+                      "key": "2dio25",
                       "pathname": "/",
                       "search": "",
                       "state": undefined,
@@ -155,7 +155,7 @@ exports[`<Login />  should render without crashing 1`] = `
                   "listen": [Function],
                   "location": Object {
                     "hash": "",
-                    "key": "81d863",
+                    "key": "2dio25",
                     "pathname": "/",
                     "search": "",
                     "state": undefined,
@@ -168,7 +168,7 @@ exports[`<Login />  should render without crashing 1`] = `
               location={
                 Object {
                   "hash": "",
-                  "key": "81d863",
+                  "key": "2dio25",
                   "pathname": "/",
                   "search": "",
                   "state": undefined,

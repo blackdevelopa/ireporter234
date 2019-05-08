@@ -46,6 +46,11 @@ class createNewIntervention extends Component {
     history.push('/interventions');
   };
 
+  handleInputFileChange = e => {
+    const { files, name } = e.target;
+    this.setState({ [name]: files });
+  };
+
   render() {
     return (
       <div>
@@ -69,12 +74,15 @@ class createNewIntervention extends Component {
                 required
               />
             </Form.Group>
-            <Form.Field
-              control={Input}
-              label="Upload images"
+            <Form.Input
+              iconPosition="left"
+              type="file"
+              label="Upload image"
+              onChange={this.handleInputFileChange}
               name="images"
-              onChange={this.handleInputChange}
-              placeholder="click to upload"
+              transparent
+              multiple
+              accept="image/*"
             />
             <Form.Field
               control={TextArea}

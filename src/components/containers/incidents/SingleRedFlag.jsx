@@ -3,8 +3,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom';
-import { Card, Container } from 'semantic-ui-react';
+import { withRouter, Link } from 'react-router-dom';
+import { Button, Card, Container } from 'semantic-ui-react';
 import Navbar from '../../navbar/Navbar';
 import SwitchNav from '../../navbar/switchNav/SwitchNav';
 import { fetchSingleIncident } from '../../../redux/actions/incident/incident';
@@ -43,12 +43,22 @@ export class SingleRedFlag extends Component {
         </div>
       );
     }
+
+    const extra = (
+      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+        {singleRedflag.status}
+        <Button as={Link} to={`/edit?id=${singleRedflag.id}`} color="blue">
+          Edit
+        </Button>
+      </div>
+    );
+
     const redflagInfo = {
       image: singleRedflag.images,
       header: singleRedflag.location,
-      extra: singleRedflag.status,
       description: singleRedflag.comment,
       meta: singleRedflag.createdon.substr(0, 10),
+      extra,
     };
     return (
       <div>

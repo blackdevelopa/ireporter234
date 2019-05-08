@@ -6,6 +6,7 @@ const initialStart = {
   incident: [],
   newIncident: false,
   singleIncident: {},
+  editIncident: {},
 };
 
 const incidentReducer = (state = initialStart, action) => {
@@ -60,6 +61,42 @@ const incidentReducer = (state = initialStart, action) => {
         singleIncident: action.payload,
       };
     case actionTypes.FETCH_SINGLE_INCIDENT_FAILURE:
+      return {
+        ...state,
+        isLoading: false,
+        error: true,
+      };
+    case actionTypes.EDIT_INCIDENT_START:
+      return {
+        ...state,
+        isLoading: true,
+      };
+    case actionTypes.EDIT_INCIDENT_SUCCESS:
+      return {
+        ...state,
+        isLoading: false,
+        success: true,
+        editIncident: action.payload,
+      };
+    case actionTypes.EDIT_INCIDENT_FAILURE:
+      return {
+        ...state,
+        isLoading: false,
+        error: true,
+      };
+    case actionTypes.DELETE_INCIDENT_START:
+      return {
+        ...state,
+        isLoading: true,
+      };
+    case actionTypes.DELETE_INCIDENT_SUCCESS:
+      return {
+        ...state,
+        isLoading: false,
+        success: true,
+        singleIncident: action.payload,
+      };
+    case actionTypes.DELETE_INCIDENT_FAILURE:
       return {
         ...state,
         isLoading: false,

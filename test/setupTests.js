@@ -6,6 +6,5 @@ import configMockStore from 'redux-mock-store';
 import 'dotenv/config';
 
 enzyme.configure({ adapter: new Adapter() });
-// jest.mock('axios');
 
 export const mockStore = configMockStore([thunk]);
