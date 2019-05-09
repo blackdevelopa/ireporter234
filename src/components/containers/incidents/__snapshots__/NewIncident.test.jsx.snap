@@ -1,0 +1,943 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<NewIncident /> should render without crashing 1`] = `
+<Provider
+  context={
+    Object {
+      "$$typeof": Symbol(react.context),
+      "Consumer": Object {
+        "$$typeof": Symbol(react.context),
+        "_calculateChangedBits": null,
+        "_context": [Circular],
+      },
+      "Provider": Object {
+        "$$typeof": Symbol(react.provider),
+        "_context": [Circular],
+      },
+      "_calculateChangedBits": null,
+      "_currentRenderer": Object {},
+      "_currentRenderer2": null,
+      "_currentValue": undefined,
+      "_currentValue2": undefined,
+    }
+  }
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <MemoryRouter>
+    <Router
+      history={
+        Object {
+          "action": "POP",
+          "block": [Function],
+          "canGo": [Function],
+          "createHref": [Function],
+          "entries": Array [
+            Object {
+              "hash": "",
+              "key": "nrfjly",
+              "pathname": "/",
+              "search": "",
+              "state": undefined,
+            },
+          ],
+          "go": [Function],
+          "goBack": [Function],
+          "goForward": [Function],
+          "index": 0,
+          "length": 1,
+          "listen": [Function],
+          "location": Object {
+            "hash": "",
+            "key": "nrfjly",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          },
+          "push": [Function],
+          "replace": [Function],
+        }
+      }
+    >
+      <div>
+        <Connect(withRouter(CreateNewIntervention))
+          context={
+            Object {
+              "$$typeof": Symbol(react.context),
+              "Consumer": Object {
+                "$$typeof": Symbol(react.context),
+                "_calculateChangedBits": null,
+                "_context": [Circular],
+              },
+              "Provider": Object {
+                "$$typeof": Symbol(react.provider),
+                "_context": [Circular],
+              },
+              "_calculateChangedBits": null,
+              "_currentRenderer": Object {},
+              "_currentRenderer2": null,
+              "_currentValue": undefined,
+              "_currentValue2": undefined,
+            }
+          }
+        >
+          <withRouter(CreateNewIntervention)
+            context={
+              Object {
+                "$$typeof": Symbol(react.context),
+                "Consumer": Object {
+                  "$$typeof": Symbol(react.context),
+                  "_calculateChangedBits": null,
+                  "_context": [Circular],
+                },
+                "Provider": Object {
+                  "$$typeof": Symbol(react.provider),
+                  "_context": [Circular],
+                },
+                "_calculateChangedBits": null,
+                "_currentRenderer": Object {},
+                "_currentRenderer2": null,
+                "_currentValue": undefined,
+                "_currentValue2": undefined,
+              }
+            }
+            createNewIncident={[Function]}
+          >
+            <Route>
+              <CreateNewIntervention
+                context={
+                  Object {
+                    "$$typeof": Symbol(react.context),
+                    "Consumer": Object {
+                      "$$typeof": Symbol(react.context),
+                      "_calculateChangedBits": null,
+                      "_context": [Circular],
+                    },
+                    "Provider": Object {
+                      "$$typeof": Symbol(react.provider),
+                      "_context": [Circular],
+                    },
+                    "_calculateChangedBits": null,
+                    "_currentRenderer": Object {},
+                    "_currentRenderer2": null,
+                    "_currentValue": undefined,
+                    "_currentValue2": undefined,
+                  }
+                }
+                createNewIncident={[Function]}
+                history={
+                  Object {
+                    "action": "POP",
+                    "block": [Function],
+                    "canGo": [Function],
+                    "createHref": [Function],
+                    "entries": Array [
+                      Object {
+                        "hash": "",
+                        "key": "nrfjly",
+                        "pathname": "/",
+                        "search": "",
+                        "state": undefined,
+                      },
+                    ],
+                    "go": [Function],
+                    "goBack": [Function],
+                    "goForward": [Function],
+                    "index": 0,
+                    "length": 1,
+                    "listen": [Function],
+                    "location": Object {
+                      "hash": "",
+                      "key": "nrfjly",
+                      "pathname": "/",
+                      "search": "",
+                      "state": undefined,
+                    },
+                    "push": [Function],
+                    "replace": [Function],
+                  }
+                }
+                location={
+                  Object {
+                    "hash": "",
+                    "key": "nrfjly",
+                    "pathname": "/",
+                    "search": "",
+                    "state": undefined,
+                  }
+                }
+                match={
+                  Object {
+                    "isExact": true,
+                    "params": Object {},
+                    "path": "/",
+                    "url": "/",
+                  }
+                }
+              >
+                <div>
+                  <Navbar
+                    access="true"
+                    firstbtn="Redflag"
+                    firstbtnclick={[Function]}
+                    secondbtn="Intervention"
+                    secondbtnclick={[Function]}
+                  >
+                    <div>
+                      <div>
+                        <a
+                          href="/"
+                        >
+                          iReporter
+                        </a>
+                        <Button
+                          as="button"
+                          color="blue"
+                          compact={true}
+                          onClick={[Function]}
+                          size="medium"
+                        >
+                          <Ref
+                            innerRef={
+                              Object {
+                                "current": <button
+                                  class="ui blue medium compact button"
+                                >
+                                  Redflag
+                                </button>,
+                              }
+                            }
+                          >
+                            <RefFindNode
+                              innerRef={
+                                Object {
+                                  "current": <button
+                                    class="ui blue medium compact button"
+                                  >
+                                    Redflag
+                                  </button>,
+                                }
+                              }
+                            >
+                              <button
+                                className="ui blue medium compact button"
+                                onClick={[Function]}
+                              >
+                                Redflag
+                              </button>
+                            </RefFindNode>
+                          </Ref>
+                        </Button>
+                        <Button
+                          as="button"
+                          color="green"
+                          compact={true}
+                          onClick={[Function]}
+                          size="medium"
+                        >
+                          <Ref
+                            innerRef={
+                              Object {
+                                "current": <button
+                                  class="ui green medium compact button"
+                                >
+                                  Intervention
+                                </button>,
+                              }
+                            }
+                          >
+                            <RefFindNode
+                              innerRef={
+                                Object {
+                                  "current": <button
+                                    class="ui green medium compact button"
+                                  >
+                                    Intervention
+                                  </button>,
+                                }
+                              }
+                            >
+                              <button
+                                className="ui green medium compact button"
+                                onClick={[Function]}
+                              >
+                                Intervention
+                              </button>
+                            </RefFindNode>
+                          </Ref>
+                        </Button>
+                      </div>
+                    </div>
+                  </Navbar>
+                  <switchNav>
+                    <div
+                      props={Object {}}
+                    />
+                  </switchNav>
+                  <Container>
+                    <div
+                      className="ui container"
+                    >
+                      <Form
+                        as="form"
+                        onSubmit={[Function]}
+                      >
+                        <form
+                          className="ui form"
+                          onSubmit={[Function]}
+                        >
+                          <FormGroup
+                            widths="equal"
+                          >
+                            <div
+                              className="equal width fields"
+                            >
+                              <FormField
+                                control={[Function]}
+                                label="Your Location"
+                                name="location"
+                                onChange={[Function]}
+                                placeholder="lagos..."
+                                required={true}
+                              >
+                                <div
+                                  className="required field"
+                                >
+                                  <label>
+                                    Your Location
+                                  </label>
+                                  <Input
+                                    name="location"
+                                    onChange={[Function]}
+                                    placeholder="lagos..."
+                                    required={true}
+                                    type="text"
+                                  >
+                                    <div
+                                      className="ui input"
+                                    >
+                                      <input
+                                        name="location"
+                                        onChange={[Function]}
+                                        placeholder="lagos..."
+                                        required={true}
+                                        type="text"
+                                      />
+                                    </div>
+                                  </Input>
+                                </div>
+                              </FormField>
+                            </div>
+                          </FormGroup>
+                          <FormInput
+                            accept="image/*"
+                            as={[Function]}
+                            control={[Function]}
+                            iconPosition="left"
+                            label="Upload image"
+                            multiple={true}
+                            name="images"
+                            onChange={[Function]}
+                            transparent={true}
+                            type="file"
+                          >
+                            <FormField
+                              accept="image/*"
+                              control={[Function]}
+                              iconPosition="left"
+                              label="Upload image"
+                              multiple={true}
+                              name="images"
+                              onChange={[Function]}
+                              transparent={true}
+                              type="file"
+                            >
+                              <div
+                                className="field"
+                              >
+                                <label>
+                                  Upload image
+                                </label>
+                                <Input
+                                  accept="image/*"
+                                  iconPosition="left"
+                                  multiple={true}
+                                  name="images"
+                                  onChange={[Function]}
+                                  transparent={true}
+                                  type="file"
+                                >
+                                  <div
+                                    className="ui transparent left icon input"
+                                  >
+                                    <input
+                                      accept="image/*"
+                                      multiple={true}
+                                      name="images"
+                                      onChange={[Function]}
+                                      type="file"
+                                    />
+                                  </div>
+                                </Input>
+                              </div>
+                            </FormField>
+                          </FormInput>
+                          <FormField
+                            control={[Function]}
+                            label="Comment"
+                            name="comment"
+                            onChange={[Function]}
+                            placeholder="Share what you can see..."
+                            required={true}
+                          >
+                            <div
+                              className="required field"
+                            >
+                              <label>
+                                Comment
+                              </label>
+                              <TextArea
+                                as="textarea"
+                                name="comment"
+                                onChange={[Function]}
+                                placeholder="Share what you can see..."
+                                required={true}
+                                rows={3}
+                              >
+                                <Ref
+                                  innerRef={
+                                    Object {
+                                      "current": <textarea
+                                        name="comment"
+                                        placeholder="Share what you can see..."
+                                        required=""
+                                        rows="3"
+                                      />,
+                                    }
+                                  }
+                                >
+                                  <RefFindNode
+                                    innerRef={
+                                      Object {
+                                        "current": <textarea
+                                          name="comment"
+                                          placeholder="Share what you can see..."
+                                          required=""
+                                          rows="3"
+                                        />,
+                                      }
+                                    }
+                                  >
+                                    <textarea
+                                      name="comment"
+                                      onChange={[Function]}
+                                      onInput={[Function]}
+                                      placeholder="Share what you can see..."
+                                      required={true}
+                                      rows={3}
+                                    />
+                                  </RefFindNode>
+                                </Ref>
+                              </TextArea>
+                            </div>
+                          </FormField>
+                          <FormField
+                            control={[Function]}
+                            fluid={true}
+                          >
+                            <div
+                              className="field"
+                            >
+                              <Button
+                                as="button"
+                                fluid={true}
+                              >
+                                <Ref
+                                  innerRef={
+                                    Object {
+                                      "current": <button
+                                        class="ui fluid button"
+                                      >
+                                        Submit
+                                      </button>,
+                                    }
+                                  }
+                                >
+                                  <RefFindNode
+                                    innerRef={
+                                      Object {
+                                        "current": <button
+                                          class="ui fluid button"
+                                        >
+                                          Submit
+                                        </button>,
+                                      }
+                                    }
+                                  >
+                                    <button
+                                      className="ui fluid button"
+                                      onClick={[Function]}
+                                    >
+                                      Submit
+                                    </button>
+                                  </RefFindNode>
+                                </Ref>
+                              </Button>
+                            </div>
+                          </FormField>
+                        </form>
+                      </Form>
+                    </div>
+                  </Container>
+                </div>
+              </CreateNewIntervention>
+            </Route>
+          </withRouter(CreateNewIntervention)>
+        </Connect(withRouter(CreateNewIntervention))>
+        <Connect(withRouter(CreateNewRedFlag))
+          context={
+            Object {
+              "$$typeof": Symbol(react.context),
+              "Consumer": Object {
+                "$$typeof": Symbol(react.context),
+                "_calculateChangedBits": null,
+                "_context": [Circular],
+              },
+              "Provider": Object {
+                "$$typeof": Symbol(react.provider),
+                "_context": [Circular],
+              },
+              "_calculateChangedBits": null,
+              "_currentRenderer": Object {},
+              "_currentRenderer2": null,
+              "_currentValue": undefined,
+              "_currentValue2": undefined,
+            }
+          }
+        >
+          <withRouter(CreateNewRedFlag)
+            context={
+              Object {
+                "$$typeof": Symbol(react.context),
+                "Consumer": Object {
+                  "$$typeof": Symbol(react.context),
+                  "_calculateChangedBits": null,
+                  "_context": [Circular],
+                },
+                "Provider": Object {
+                  "$$typeof": Symbol(react.provider),
+                  "_context": [Circular],
+                },
+                "_calculateChangedBits": null,
+                "_currentRenderer": Object {},
+                "_currentRenderer2": null,
+                "_currentValue": undefined,
+                "_currentValue2": undefined,
+              }
+            }
+            createNewIncident={[Function]}
+          >
+            <Route>
+              <CreateNewRedFlag
+                context={
+                  Object {
+                    "$$typeof": Symbol(react.context),
+                    "Consumer": Object {
+                      "$$typeof": Symbol(react.context),
+                      "_calculateChangedBits": null,
+                      "_context": [Circular],
+                    },
+                    "Provider": Object {
+                      "$$typeof": Symbol(react.provider),
+                      "_context": [Circular],
+                    },
+                    "_calculateChangedBits": null,
+                    "_currentRenderer": Object {},
+                    "_currentRenderer2": null,
+                    "_currentValue": undefined,
+                    "_currentValue2": undefined,
+                  }
+                }
+                createNewIncident={[Function]}
+                history={
+                  Object {
+                    "action": "POP",
+                    "block": [Function],
+                    "canGo": [Function],
+                    "createHref": [Function],
+                    "entries": Array [
+                      Object {
+                        "hash": "",
+                        "key": "nrfjly",
+                        "pathname": "/",
+                        "search": "",
+                        "state": undefined,
+                      },
+                    ],
+                    "go": [Function],
+                    "goBack": [Function],
+                    "goForward": [Function],
+                    "index": 0,
+                    "length": 1,
+                    "listen": [Function],
+                    "location": Object {
+                      "hash": "",
+                      "key": "nrfjly",
+                      "pathname": "/",
+                      "search": "",
+                      "state": undefined,
+                    },
+                    "push": [Function],
+                    "replace": [Function],
+                  }
+                }
+                location={
+                  Object {
+                    "hash": "",
+                    "key": "nrfjly",
+                    "pathname": "/",
+                    "search": "",
+                    "state": undefined,
+                  }
+                }
+                match={
+                  Object {
+                    "isExact": true,
+                    "params": Object {},
+                    "path": "/",
+                    "url": "/",
+                  }
+                }
+              >
+                <div>
+                  <Navbar
+                    access="true"
+                    firstbtn="Redflag"
+                    firstbtnclick={[Function]}
+                    secondbtn="Intervention"
+                    secondbtnclick={[Function]}
+                  >
+                    <div>
+                      <div>
+                        <a
+                          href="/"
+                        >
+                          iReporter
+                        </a>
+                        <Button
+                          as="button"
+                          color="blue"
+                          compact={true}
+                          onClick={[Function]}
+                          size="medium"
+                        >
+                          <Ref
+                            innerRef={
+                              Object {
+                                "current": <button
+                                  class="ui blue medium compact button"
+                                >
+                                  Redflag
+                                </button>,
+                              }
+                            }
+                          >
+                            <RefFindNode
+                              innerRef={
+                                Object {
+                                  "current": <button
+                                    class="ui blue medium compact button"
+                                  >
+                                    Redflag
+                                  </button>,
+                                }
+                              }
+                            >
+                              <button
+                                className="ui blue medium compact button"
+                                onClick={[Function]}
+                              >
+                                Redflag
+                              </button>
+                            </RefFindNode>
+                          </Ref>
+                        </Button>
+                        <Button
+                          as="button"
+                          color="green"
+                          compact={true}
+                          onClick={[Function]}
+                          size="medium"
+                        >
+                          <Ref
+                            innerRef={
+                              Object {
+                                "current": <button
+                                  class="ui green medium compact button"
+                                >
+                                  Intervention
+                                </button>,
+                              }
+                            }
+                          >
+                            <RefFindNode
+                              innerRef={
+                                Object {
+                                  "current": <button
+                                    class="ui green medium compact button"
+                                  >
+                                    Intervention
+                                  </button>,
+                                }
+                              }
+                            >
+                              <button
+                                className="ui green medium compact button"
+                                onClick={[Function]}
+                              >
+                                Intervention
+                              </button>
+                            </RefFindNode>
+                          </Ref>
+                        </Button>
+                      </div>
+                    </div>
+                  </Navbar>
+                  <switchNav>
+                    <div
+                      props={Object {}}
+                    />
+                  </switchNav>
+                  <Container>
+                    <div
+                      className="ui container"
+                    >
+                      <Form
+                        as="form"
+                        onSubmit={[Function]}
+                      >
+                        <form
+                          className="ui form"
+                          onSubmit={[Function]}
+                        >
+                          <FormGroup
+                            widths="equal"
+                          >
+                            <div
+                              className="equal width fields"
+                            >
+                              <FormField
+                                control={[Function]}
+                                label="Your Location"
+                                name="location"
+                                onChange={[Function]}
+                                placeholder="lagos..."
+                                required={true}
+                              >
+                                <div
+                                  className="required field"
+                                >
+                                  <label>
+                                    Your Location
+                                  </label>
+                                  <Input
+                                    name="location"
+                                    onChange={[Function]}
+                                    placeholder="lagos..."
+                                    required={true}
+                                    type="text"
+                                  >
+                                    <div
+                                      className="ui input"
+                                    >
+                                      <input
+                                        name="location"
+                                        onChange={[Function]}
+                                        placeholder="lagos..."
+                                        required={true}
+                                        type="text"
+                                      />
+                                    </div>
+                                  </Input>
+                                </div>
+                              </FormField>
+                            </div>
+                          </FormGroup>
+                          <FormInput
+                            accept="image/*"
+                            as={[Function]}
+                            control={[Function]}
+                            iconPosition="left"
+                            label="Upload image"
+                            multiple={true}
+                            name="images"
+                            onChange={[Function]}
+                            transparent={true}
+                            type="file"
+                          >
+                            <FormField
+                              accept="image/*"
+                              control={[Function]}
+                              iconPosition="left"
+                              label="Upload image"
+                              multiple={true}
+                              name="images"
+                              onChange={[Function]}
+                              transparent={true}
+                              type="file"
+                            >
+                              <div
+                                className="field"
+                              >
+                                <label>
+                                  Upload image
+                                </label>
+                                <Input
+                                  accept="image/*"
+                                  iconPosition="left"
+                                  multiple={true}
+                                  name="images"
+                                  onChange={[Function]}
+                                  transparent={true}
+                                  type="file"
+                                >
+                                  <div
+                                    className="ui transparent left icon input"
+                                  >
+                                    <input
+                                      accept="image/*"
+                                      multiple={true}
+                                      name="images"
+                                      onChange={[Function]}
+                                      type="file"
+                                    />
+                                  </div>
+                                </Input>
+                              </div>
+                            </FormField>
+                          </FormInput>
+                          <FormField
+                            control={[Function]}
+                            label="Comment"
+                            name="comment"
+                            onChange={[Function]}
+                            placeholder="Share what you can see..."
+                            required={true}
+                          >
+                            <div
+                              className="required field"
+                            >
+                              <label>
+                                Comment
+                              </label>
+                              <TextArea
+                                as="textarea"
+                                name="comment"
+                                onChange={[Function]}
+                                placeholder="Share what you can see..."
+                                required={true}
+                                rows={3}
+                              >
+                                <Ref
+                                  innerRef={
+                                    Object {
+                                      "current": <textarea
+                                        name="comment"
+                                        placeholder="Share what you can see..."
+                                        required=""
+                                        rows="3"
+                                      />,
+                                    }
+                                  }
+                                >
+                                  <RefFindNode
+                                    innerRef={
+                                      Object {
+                                        "current": <textarea
+                                          name="comment"
+                                          placeholder="Share what you can see..."
+                                          required=""
+                                          rows="3"
+                                        />,
+                                      }
+                                    }
+                                  >
+                                    <textarea
+                                      name="comment"
+                                      onChange={[Function]}
+                                      onInput={[Function]}
+                                      placeholder="Share what you can see..."
+                                      required={true}
+                                      rows={3}
+                                    />
+                                  </RefFindNode>
+                                </Ref>
+                              </TextArea>
+                            </div>
+                          </FormField>
+                          <FormField
+                            control={[Function]}
+                            fluid={true}
+                          >
+                            <div
+                              className="field"
+                            >
+                              <Button
+                                as="button"
+                                fluid={true}
+                              >
+                                <Ref
+                                  innerRef={
+                                    Object {
+                                      "current": <button
+                                        class="ui fluid button"
+                                      >
+                                        Submit
+                                      </button>,
+                                    }
+                                  }
+                                >
+                                  <RefFindNode
+                                    innerRef={
+                                      Object {
+                                        "current": <button
+                                          class="ui fluid button"
+                                        >
+                                          Submit
+                                        </button>,
+                                      }
+                                    }
+                                  >
+                                    <button
+                                      className="ui fluid button"
+                                      onClick={[Function]}
+                                    >
+                                      Submit
+                                    </button>
+                                  </RefFindNode>
+                                </Ref>
+                              </Button>
+                            </div>
+                          </FormField>
+                        </form>
+                      </Form>
+                    </div>
+                  </Container>
+                </div>
+              </CreateNewRedFlag>
+            </Route>
+          </withRouter(CreateNewRedFlag)>
+        </Connect(withRouter(CreateNewRedFlag))>
+      </div>
+    </Router>
+  </MemoryRouter>
+</Provider>
+`;

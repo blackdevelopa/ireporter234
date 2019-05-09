@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<IncidentPage /> should render without crashing 1`] = `
+<div>
+  <Navbar
+    access="true"
+    firstbtn="Add New Redflag"
+    firstbtnclick={[Function]}
+    secondbtn="Intervention"
+    secondbtnclick={[Function]}
+  />
+  <switchNav />
+  <div>
+    <Container>
+      <CardGroup
+        centered={true}
+      >
+        <ViewCard
+          data={Object {}}
+          type="red-flags"
+        />
+      </CardGroup>
+    </Container>
+  </div>
+</div>
+`;
+
+exports[`<IncidentPage /> should render without crashing 2`] = `
+<div>
+  <Navbar
+    access="true"
+    firstbtn="Add New Intervention"
+    firstbtnclick={[Function]}
+    secondbtn="Redflag"
+    secondbtnclick={[Function]}
+  />
+  <switchNav />
+  <div>
+    <Container>
+      <CardGroup
+        centered={true}
+      >
+        <ViewCard
+          data={Object {}}
+          type="interventions"
+        />
+      </CardGroup>
+    </Container>
+  </div>
+</div>
+`;

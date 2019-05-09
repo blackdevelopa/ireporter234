@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import ViewCard from '../viewSingleIncident';
+import ViewCard from '../SingleIncidentView';
 
 const props = {
   data: [

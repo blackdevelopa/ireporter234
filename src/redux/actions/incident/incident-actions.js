@@ -60,17 +60,3 @@ export const editIncidentFailure = payload => ({
   type: actionTypes.EDIT_INCIDENT_FAILURE,
   payload,
 });
-
-export const deleteIncidentStart = () => ({
-  type: actionTypes.DELETE_INCIDENT_START,
-});
-
-export const deleteIncidentSuccess = payload => ({
-  type: actionTypes.DELETE_INCIDENT_SUCCESS,
-  payload,
-});
-
-export const deleteIncidentFailure = payload => ({
-  type: actionTypes.DELETE_INCIDENT_FAILURE,
-  payload,
-});

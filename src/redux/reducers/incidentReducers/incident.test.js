@@ -21,7 +21,18 @@ describe('incidentReducer', () => {
     expect(incident(initialState, {})).toEqual(initialState);
   });
 
-  it('should return all incident on fetch all success', () => {
+  it('should return start on fetch all start', () => {
+    expect(
+      incident(initialState, {
+        type: actionTypes.FETCH_ALL_INCIDENT_START,
+      })
+    ).toEqual({
+      ...initialState,
+      isLoading: true,
+    });
+  });
+
+  it('should return all interventions on fetch all success', () => {
     expect(
       incident(initialState, {
         type: actionTypes.FETCH_ALL_INCIDENT_SUCCESS_INTERVENTIONS,
@@ -45,6 +56,17 @@ describe('incidentReducer', () => {
     });
   });
 
+  it('should return start on fetch single start', () => {
+    expect(
+      incident(initialState, {
+        type: actionTypes.FETCH_SINGLE_INCIDENT_START,
+      })
+    ).toEqual({
+      ...initialState,
+      isLoading: true,
+    });
+  });
+
   it('should return single incident on fetch single success', () => {
     expect(
       incident(initialState, {
@@ -62,6 +84,42 @@ describe('incidentReducer', () => {
     expect(
       incident(initialState, {
         type: actionTypes.FETCH_SINGLE_INCIDENT_FAILURE,
+        payload,
+      })
+    ).toEqual({
+      ...initialState,
+      error: true,
+    });
+  });
+
+  it('should return edited incident on edit single success', () => {
+    expect(
+      incident(initialState, {
+        type: actionTypes.EDIT_INCIDENT_SUCCESS,
+        payload,
+      })
+    ).toEqual({
+      ...initialState,
+      success: true,
+      editIncident: payload,
+    });
+  });
+
+  it('should return start on edit single start', () => {
+    expect(
+      incident(initialState, {
+        type: actionTypes.EDIT_INCIDENT_START,
+      })
+    ).toEqual({
+      ...initialState,
+      isLoading: true,
+    });
+  });
+
+  it('should return an error on edit single failure', () => {
+    expect(
+      incident(initialState, {
+        type: actionTypes.EDIT_INCIDENT_FAILURE,
         payload,
       })
     ).toEqual({

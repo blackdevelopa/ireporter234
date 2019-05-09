@@ -10,7 +10,7 @@ import classes from './Incident.css';
 import Navbar from '../../navbar/Navbar';
 import { createNewIncident } from '../../../redux/actions/incident/incident';
 
-export class createNewRedFlag extends Component {
+export class CreateNewRedFlag extends Component {
   state = {
     location: '',
     images: [],
@@ -102,7 +102,7 @@ export class createNewRedFlag extends Component {
   }
 }
 
-createNewRedFlag.propTypes = {
+CreateNewRedFlag.propTypes = {
   createNewIncident: PropTypes.func,
   newRedflag: PropTypes.bool,
   history: PropTypes.shape({
@@ -117,4 +117,4 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   { createNewIncident }
-)(withRouter(createNewRedFlag));
+)(withRouter(CreateNewRedFlag));

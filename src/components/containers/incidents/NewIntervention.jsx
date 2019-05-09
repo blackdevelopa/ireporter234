@@ -10,7 +10,7 @@ import classes from './Incident.css';
 import Navbar from '../../navbar/Navbar';
 import { createNewIncident } from '../../../redux/actions/incident/incident';
 
-class createNewIntervention extends Component {
+export class CreateNewIntervention extends Component {
   state = {
     location: '',
     images: '',
@@ -102,7 +102,7 @@ class createNewIntervention extends Component {
   }
 }
 
-createNewIntervention.propTypes = {
+CreateNewIntervention.propTypes = {
   newIntervention: PropTypes.bool.isRequired,
   createNewIncident: PropTypes.func.isRequired,
   history: PropTypes.shape({
@@ -117,4 +117,4 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   { createNewIncident }
-)(withRouter(createNewIntervention));
+)(withRouter(CreateNewIntervention));

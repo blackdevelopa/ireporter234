@@ -54,21 +54,6 @@ export const editSingleIncident = (
   }
 };
 
-export const deleteSingleIncident = (type, id) => async dispatch => {
-  dispatch(actions.deleteIncidentStart());
-  try {
-    const response = await axios.delete(
-      `${process.env.baseURL}/${type}/${id}`,
-      {
-        headers: { authorization: localStorage.getItem('authorization') },
-      }
-    );
-    dispatch(actions.deleteIncidentSuccess(response.data.data));
-  } catch (error) {
-    dispatch(actions.deleteIncidentFailure(error));
-  }
-};
-
 export const fetchAllIncident = type => async dispatch => {
   dispatch(actions.fetchAllIncidentStart());
   try {

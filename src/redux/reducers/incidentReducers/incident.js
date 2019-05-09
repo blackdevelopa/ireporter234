@@ -84,24 +84,6 @@ const incidentReducer = (state = initialStart, action) => {
         isLoading: false,
         error: true,
       };
-    case actionTypes.DELETE_INCIDENT_START:
-      return {
-        ...state,
-        isLoading: true,
-      };
-    case actionTypes.DELETE_INCIDENT_SUCCESS:
-      return {
-        ...state,
-        isLoading: false,
-        success: true,
-        singleIncident: action.payload,
-      };
-    case actionTypes.DELETE_INCIDENT_FAILURE:
-      return {
-        ...state,
-        isLoading: false,
-        error: true,
-      };
     default:
       return state;
   }

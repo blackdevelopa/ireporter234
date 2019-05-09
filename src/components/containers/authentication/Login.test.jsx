@@ -68,7 +68,7 @@ describe('<Login /> ', () => {
     expect(loginForm.instance().state.email).toBe('my@email.com');
   });
 
-  it('should redirect to "/redflags if isAuthenticated is true"', () => {
+  it('should redirect to "/red-flags if isAuthenticated is true"', () => {
     const loginForm = mount(<LoginForm {...props} />);
     loginForm.setProps({ isAuthenticated: true });
     expect(loginForm.props().history.push).toBeCalledWith('/red-flags');

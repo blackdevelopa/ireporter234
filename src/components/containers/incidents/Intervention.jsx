@@ -11,7 +11,7 @@ import SwitchNav from '../../navbar/switchNav/SwitchNav';
 import { fetchAllIncident } from '../../../redux/actions/incident/incident';
 import ViewCard from './SingleIncidentView';
 
-class Intervention extends Component {
+export class Intervention extends Component {
   componentDidMount() {
     const { fetchAllIncident } = this.props;
     fetchAllIncident('interventions');
